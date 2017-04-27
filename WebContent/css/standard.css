@@ -1,0 +1,123 @@
+	body { font-family: Arial, Helvetica, sans-serif;
+	 font-size: 100%; 
+	margin: 0px;
+	 text-align=center;
+	  background-color: white;
+	
+	}
+	hr { color: #004000; text-align=center}
+	a { color:  #000066; text-decoration: none; font-family: Arial; font-weight: bold; font-size: 13px;}
+	table{ width=100% }
+	.coname{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size : 30px;
+		color : RED;
+   	}
+
+	.systemtitle{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size : 20px;
+		color : RED;
+   	}
+	
+	.version{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size : 10px;
+		color : RED;
+	}
+	.NumTextBox
+	{
+		border-style:solid;
+		border-width:1px;
+		border-color:#6d9cf9;		  
+		text-align:right;		
+	}
+	.TextBox
+	{
+		border-style:solid;
+		border-width:1px;
+		border-color:#FBAC01;		  
+	}
+	.TextBoxUC
+	{
+		border-style:solid;
+		border-width:1px;
+		border-color:#FBAC01;
+		text-transform: uppercase;		  
+	}
+	.TextBoxLC
+	{
+		border-style:solid;
+		border-width:1px;
+		border-color:#FBAC01;
+		text-transform: lowercase;		  
+	}
+	
+/* as per Users */
+	.Admintable th {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: grey;
+   
+}
+/* Font and background color for alternate row implemented using alt as class */
+	.Admintable tr.alt td {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: light-grey;
+}
+
+.stafftable th {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: green;
+   
+}
+/* Font and background color for alternate row implemented using alt as class */
+	.stafftable tr.alt td {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: light-green;
+}
+
+.fetable th {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: blue;
+   
+}
+/* Font and background color for alternate row implemented using alt as class */
+	.fetable tr.alt td {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: light-blue;
+}
+
+.banktable th {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: red;
+   
+}
+/* Font and background color for alternate row implemented using alt as class */
+	.banktable tr.alt td {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    background-color: light-red;
+}
