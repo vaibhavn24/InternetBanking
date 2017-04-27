@@ -19,7 +19,11 @@ public class SignInServlet extends HttpServlet {
 	RequestDispatcher rd;
 	
 //hi this is git hub testing.....
+<<<<<<< HEAD
 	//hello..
+=======
+	//hi this is nilesh testing
+>>>>>>> origin/master
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
