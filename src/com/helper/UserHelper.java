@@ -444,7 +444,7 @@ public class UserHelper {
 	public int updateAdmin(int id) {
 
 		int i = 0;
-		String sql = "update user set first_name = ?, last_name=?, mother_name=?, email=?, primary_phone_number=?, secondary_phone_number=?, date_of_birth=?, aadharcard=?, pancard=?, user_name=?, image=? where id=?";
+		String sql = "update user set first_name = ?, last_name=?, mother_name=?, email=?, primary_phone_number=?, secondary_phone_number=?, date_of_birth=?, aadharcard=?, pancard=?, user_name=?, image=? where id="+id+"";
 		
 		System.out.println(getFirstName()+" "+getLastName()+" "+getMotherName()+" "+getGender()+" "+getEmail()+" "+getPrimaryPhoneNumber()+" "+getSecondaryPhoneNumber()+" "+getDateOfBirth()+" "+getAadharcard()+" "+getPancard()+" "+getUserName()+" "+getImage()+"id:"+getId());
 		try {
@@ -462,7 +462,6 @@ public class UserHelper {
 			pst.setString(10, getUserName());
 			System.out.println(getImage());
 			pst.setBlob(11, getImage());
-			pst.setInt(12, id);
 			i = pst.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

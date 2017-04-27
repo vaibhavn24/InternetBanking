@@ -398,7 +398,7 @@ $(document).ready(function(){
 		<table class="tabl100" align='left'>
 		<tr>
 				<td colspan="2" align='center'>
-					  <input type="text"  name="updateEmpId" value=<%=Integer.parseInt(request.getParameter("ilRecId"))%>>
+					  <input type="hidden"  name="updateEmpId" value=<%=Integer.parseInt(request.getParameter("ilRecId"))%>>
 					 <input type="submit" name="submit" value="Update"> 
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					
