@@ -1,3 +1,6 @@
+<%@page import="com.model.Address"%>
+<%@page import="com.helper.AddressHelper"%>
+<%@page import="com.helper.AddressInterface"%>
 <%@page import="com.model.User"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -68,7 +71,6 @@ div.tab button.active {
 		User user = (User)httpSession.getAttribute("CurrentUserList");
 	
 %>
-<%-- <%=user.getId()%> --%>
 	<div class="tab">
 		<button class="tablinks" onclick="openTab(event, 'AccountSummery')"
 			id="defaultOpen">Account Summery</button>
@@ -113,8 +115,62 @@ div.tab button.active {
 	</div>
 
 	<div id="Profile" class="tabcontent">
-		<h3>Profile</h3>
-		<p></p>
+		<table class="table100" align='center'>
+				<tr>
+					<th colspan=3>Profile</th>
+				</tr> 
+			<tr>
+				<td  width="10%">Name</td>
+					<td><a href="updated_current_customerprofile.jsp?ilRecId=<%=user.getId()%>">
+				        <u><%=user.getFirstName()+" "+user.getLastName()%></u></a> &nbsp;</td>
+			</tr>
+			<tr>
+				<td  width="8%">Mother Name</td>
+				<td><%=user.getMotherName()%></td>
+			</tr>
+			<tr>
+				<td  width="10%">Email</td>
+				<td><%=user.getEmail()%></td>
+			</tr>
+			<tr>
+				<td  width="8%">Mobile</td>
+				<td><%=" "+user.getPrimaryPhoneNumber()+" \n   "+user.getSecondaryPhoneNumber()%></td>
+			</tr>
+			<tr>
+				<td  width="8%">DOB</td>
+				<td><%=user.getDateOfBirth()%></td>
+			</tr>
+			<tr>
+				<td  width="8%">Aadharcard</td>
+				<td><%=user.getAadharcard()%></td>
+			</tr>
+			<tr>
+				<td  width="8%">Pancard</td>
+				<td><%=user.getPancard()%></td>
+			</tr>
+			<tr>
+				<td  width="20%">Local Address</td>
+				<%
+				AddressInterface address1 = new AddressHelper();
+				Address address = address1.showSelectedlocalAddress(user.getId());
+				%>
+				<td><%=address.getLine1()+", "+address.getLine2()+"\n"+
+				address.getCity()+", "+address.getState()+"\n"+
+				address.getCountry()+"\n "+address.getPincode()%></td>
+			</tr>
+			<tr>
+				<td  width="20%">Permanant Address</td>
+				
+				<%
+				AddressInterface address2 = new AddressHelper();
+				Address permanantaddress = address2.showSelectedPermanantAddress(user.getId());
+     			%>	
+				<td><%=permanantaddress.getLine1()+", "+permanantaddress.getLine2()+"\n"+
+					permanantaddress.getCity()+", "+permanantaddress.getState()+"\n"+
+					permanantaddress.getCountry()+"\n"+permanantaddress.getPincode()%></td>
+			</tr>
+			
+		</table>
 	</div>
 	<div id="ChangeLoginPassword" class="tabcontent">
 		<h3>Change Login Password</h3>

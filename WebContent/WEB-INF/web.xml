@@ -206,4 +206,14 @@
 		<servlet-name>CustomerAadharServlet</servlet-name>
 		<url-pattern>/customerAadharNumber</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UpdateCurrentCustProfile</servlet-name>
+		<servlet-class>com.controller.UpdateCurrentCustomerProfileServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateCurrentCustProfile</servlet-name>
+		<url-pattern>/updatecurrent_custprofile</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
