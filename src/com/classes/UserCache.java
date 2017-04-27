@@ -110,7 +110,7 @@ public class UserCache {
 				user.setLastAccessTime(rs.getTimestamp(21));
 				user.setUserType(rs.getInt(22));
 				user.setCustomerType(rs.getInt(23));
-				user.setImage((InputStream) rs.getBlob(24));
+				//user.setImage((InputStream) rs.getBlob(24));
 				list.add(user);
 			}
 			
