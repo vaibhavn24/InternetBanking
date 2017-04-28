@@ -215,5 +215,4 @@
 		<servlet-name>UpdateCurrentCustProfile</servlet-name>
 		<url-pattern>/updatecurrent_custprofile</url-pattern>
 	</servlet-mapping>
-	
 </web-app>
