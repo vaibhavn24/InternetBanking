@@ -182,7 +182,7 @@
     <url-pattern>/UpdateUserPasswordAdminEmployeeRegisterServlet/*</url-pattern>
   </servlet-mapping>
   <servlet>
-   <servlet-name>updateUserPasswordAdminEmployee</servlet-name>
+   	<servlet-name>updateUserPasswordAdminEmployee</servlet-name>
     <servlet-class>com.controller.UpdateUserPasswordAdminEmpServlet</servlet-class>
   </servlet>
   <servlet-mapping>
@@ -215,5 +215,4 @@
 		<servlet-name>UpdateCurrentCustProfile</servlet-name>
 		<url-pattern>/updatecurrent_custprofile</url-pattern>
 	</servlet-mapping>
-	
 </web-app>
