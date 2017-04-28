@@ -1,6 +1,13 @@
 package com.helper;
 
-public class AccountHelper {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.dbutility.DbUtil;
+
+public class AccountHelper{
+	private static  Connection connection;
 	private int id;
 	private String accountNumber;
 	private String CIFNumber;
@@ -9,6 +16,12 @@ public class AccountHelper {
 	private static  double balance;
 	private int transactionId;
 	private String description;
+	
+	public AccountHelper()
+	{
+		connection = DbUtil.getConnection();
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -58,5 +71,20 @@ public class AccountHelper {
 		this.description = description;
 	}
 	
-
+	public static void  insertAcNumber(Long acNumber,int uId) {
+		
+		System.out.println("Method A/C Number >> "+acNumber+"  Uid>>"+uId);
+		String sql = "insert into accoutinfo(acnumber, uid) values (?,?)";
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			preparedStatement.setLong(1, acNumber);
+			preparedStatement.setInt(2, uId);
+			System.out.println("Ac Insert SQL>> "+sql);
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		
+	}
 }

@@ -14,5 +14,7 @@ public class User extends UserHelper {
 		// TODO Auto-generated method stub
 		return super.updateAdmin(id);
 	}
+	
+	
 
 }
