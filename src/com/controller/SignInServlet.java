@@ -1,7 +1,6 @@
 package com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -16,13 +15,17 @@ import com.model.User;
 
 public class SignInServlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3948023187081675876L;
 	RequestDispatcher rd;
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd;
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+	//	PrintWriter out = response.getWriter();
 		String username = request.getParameter("userName");
 		String originalPwd = request.getParameter("password");
 		int userType = LoginDao.validate(username, originalPwd);

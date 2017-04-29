@@ -28,13 +28,13 @@
 										      <a href="#">Link 2</a>
 										      <a href="#">Link 3</a>
 										    </div> --></li>
-					<li class="dropdown"><a href="aboutus.jsp" class="dropbtn">About
+					<li class="dropdown"><a href="about.jsp" class="dropbtn">About
 							Us</a> <!--   <div class="dropdown-content">
 										      <a href="#">Link 1</a>
 										      <a href="#">Link 2</a>
 										      <a href="#">Link 3</a>
 										    </div> --></li>
-					<li class="dropdown"><a href="contactus.jsp" class="dropbtn">Contact
+					<li class="dropdown"><a href="contact.jsp" class="dropbtn">Contact
 							Us</a> <!--   <div class="dropdown-content">
 										      <a href="#">Link 1</a>
 										      <a href="#">Link 2</a>

@@ -215,4 +215,16 @@
 		<servlet-name>UpdateCurrentCustProfile</servlet-name>
 		<url-pattern>/updatecurrent_custprofile</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>MailOTP</servlet-name>
+	<servlet-class>com.controller.ProfileUpdatationWithOTP</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>MailOTP</servlet-name>
+	<url-pattern>/ProfileUpdatationWithOTP</url-pattern>
+	</servlet-mapping>
+	
+	
 </web-app>

@@ -10,6 +10,46 @@
 <head>
 <link href="css/tables.css" rel="stylesheet" type="text/css">
 <style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+<style>
 * {
 	box-sizing: border-box
 }
@@ -120,9 +160,11 @@ div.tab button.active {
 					<th colspan=3>Profile</th>
 				</tr> 
 			<tr>
+			<%-- <%=user.getId()%> --%>
 				<td  width="10%">Name</td>
-					<td><a href="updated_current_customerprofile.jsp?ilRecId=<%=user.getId()%>">
-				        <u><%=user.getFirstName()+" "+user.getLastName()%></u></a> &nbsp;</td>
+					<%-- <td><a href="updated_current_customerprofile.jsp?ilRecId=<%=user.getId()%>"> --%>
+					  <td><button id="myBtn"><%=user.getFirstName()+" "+user.getLastName()%></button>
+				        <u></u> &nbsp;</td>
 			</tr>
 			<tr>
 				<td  width="8%">Mother Name</td>
@@ -205,6 +247,23 @@ div.tab button.active {
 			</form>
 	</div>
 
+    <div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Check your Mail for OTP to update your Profile </p>
+    <form action="ProfileUpdatationWithOTP">
+     OTP : <input type ="text" name="otp"/>
+     <input type="text" name ="id" value="<%=user.getId()%>">
+     <input type="submit" value="Submit">
+     </form>
+  </div>
+
+  </div>
+
+
+
 	<div id="LinkyourAadhar" class="tabcontent">
 		<h3>Link your Aadhar Card Number</h3>
 		<form action="customerAadharNumber" method="post" onsubmit="return checkAadharForm(this);">
@@ -224,6 +283,7 @@ div.tab button.active {
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<input type="hidden" name = "customerId" value="<%=user.getId()%>">
+				<input type="hidden" name = "email" value="<%=user.getEmail()%>" id="email">
 				 <input type="submit"name="submit" value="Save"> 
 				 <input type="Reset" name="Reset" value="Reset"></td>
 			</tr>
@@ -253,6 +313,59 @@ function openTab(evt, serviceName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+</script>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+    //var otp = GenerateOTP.OTP();
+    var xmlhttp;
+    var email = document.getElementById("email").value;
+    var url = "SendMailwithOTP.jsp?email="+email;
+    if (window.XMLHttpRequest)
+    {
+    xmlhttp=new XMLHttpRequest();
+    }
+  else
+    {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET",url,true);
+    xmlhttp.send();
+     
+      
+    
+    //var x1 = document.getElementById("username").value;
+  /*   $.get("SendMailwithOTP?email="+email, function(data){
+    	if(data != ""){
+   		 alert(data);
+   		}
+    }); */
+    
+    //var sendmail =
+}
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
 	<!-- <script>
 function opentab(evt , tabName)
