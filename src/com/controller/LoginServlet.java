@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		int userType = user.getUserType();
+		System.out.println("In log in Servlet"+userType);
 		HttpSession session = request.getSession();
 		session.setAttribute("loggedInUser", user);
 

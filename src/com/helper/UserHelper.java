@@ -538,6 +538,7 @@ public class UserHelper {
 	public static User populateUserByResultSet(ResultSet rs) {
 		User user = new User();
 		try {
+			user.setId(rs.getInt(1));
 		user.setFirstName(rs.getString(2));
 		user.setLastName(rs.getString(3));
 		user.setGender(rs.getInt(4));
