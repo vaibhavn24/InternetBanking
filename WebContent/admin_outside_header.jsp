@@ -20,41 +20,29 @@
 		<ul>
 
 			<li><a href="home.jsp">Home</a></li>
+			
+			
+			<li class="dropdown"><a href="prodandserv.jsp"
+							class="dropbtn">Security question</a>  <div class="dropdown-content">
+											    <a href="super_adminshow_questions.jsp">Show</a>
+				  							    </div> </li>
+			
 		
 			<li class="dropdown">
-			<a href="javascript:void(0)" class="dropbtn">Employee</a>
+			<a href="javascript:void(0)" class="dropbtn">User</a>
            <div class="dropdown-content">
-            <a href="addEmployee.jsp">Add Employee</a>
-            <a href="viewEmployeeList.jsp">Update Employee</a>
+            <a href="superadmin_showemployee.jsp"> Employee</a>
+            <a href="superadmin_showcustomer.jsp"> Customer</a>
              <!-- <a href="deleteEmployee.jsp">Delete Employee</a> -->
           </div>
 			</li>
 			
-			<!-- <li class="dropdown">
-			<a href="javascript:void(0)">Admin</a>
-			<div class="dropdown-content">
-			<a href="addAdmin.jsp">Add Admin</a>
-			<a href="viewAdminList.jsp">Update Admin</a>
-			<a href="deleteAdmin.jsp">Delete Admin</a>
-			</div>
-			</li> -->
 			<li class="dropdown">
-			<a href="javascript:void(0)">Branches</a>
-			<div class="dropdown-content">
-			
-			<a href="viewBranchDetails.jsp">Update Branch</a>
-			<!-- <a href="viewBranchDetails.jsp">Delete Branch</a>			 -->
-			</div>
-			</li>
-			
-			<li class="dropdown">
-			<a href="javascript:void(0)">Questions</a>
-			<div class="dropdown-content">
-			
-			<a href="viewQuestionList.jsp">Update Question</a>
-			<!-- <a href="deleteQuestion.jsp">Delete Question</a> -->
-			</div>
-			</li>
+								<a href="aboutus.jsp" class="dropbtn">Add Branches</a>
+									<div class="dropdown-content">
+										<a href="superadmin_showabranches.jsp">Add</a>
+									</div>
+						</li>
 			
 			
 			<li class="dropdown">
@@ -63,6 +51,8 @@
 									<a href="superadmin_showservices.jsp">show services</a>
 								</div> 
 						</li> 
+			
+			
 						</ul>
 						</div>
 						<table class="width100">

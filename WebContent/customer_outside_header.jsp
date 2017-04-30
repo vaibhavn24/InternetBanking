@@ -28,14 +28,6 @@
           </div>
 			</li>
 			
-			<!-- <li class="dropdown">
-			<a href="javascript:void(0)">Admin</a>
-			<div class="dropdown-content">
-			<a href="addAdmin.jsp">Add Admin</a>
-			<a href="viewAdminList.jsp">Update Admin</a>
-			<a href="deleteAdmin.jsp">Delete Admin</a>
-			</div>
-			</li> -->
 			<li class="dropdown">
 			<a href="about.jsp">About Us</a>
 			</li>
