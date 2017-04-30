@@ -10,10 +10,21 @@ import com.model.User;
 
 public class LoginDao {
 
+<<<<<<< HEAD
 	/*public static User getUserByEmailAndPassword(String userName, String originalPassword) {
 		Connection connection = null;
 		int userType = 0;
 		String encryptpassword = EncryptDecrypt.encryptData(originalPassword);
+=======
+	private static Connection connection;
+	static String user_name;
+	public static int validate(String user_name1, String password1) {
+		
+		String password = null;
+		int usertype = 0;
+		EncryptDecrypt encrypt = new EncryptDecrypt();
+		String encryptpassword = encrypt.encryptData(password1);
+>>>>>>> origin/master
 		try {
 			connection = DbUtil.getConnection();
 			Statement stmt = connection.createStatement();

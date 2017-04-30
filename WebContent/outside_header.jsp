@@ -4,7 +4,7 @@
 <link href="css/tables.css" rel="stylesheet" type="text/css">
 
 <div id="header">
-	<img src="images/int.jpg" width="1500" height="150 px" />
+	<img src="images/int.jpg" width="100%" height="150 px" />
 	<table align='left'>
 		<tr>
 			<td></td>

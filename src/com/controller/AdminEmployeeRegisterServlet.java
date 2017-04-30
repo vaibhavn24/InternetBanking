@@ -27,7 +27,7 @@ public class AdminEmployeeRegisterServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		User user = UserHelper.populateUser(request);
+		User user = UserHelper.populateUserByRequest(request);
 		user.insertUser();
 		userId = user.getCurrentUserId(user.getEmail());
 		String id = String.valueOf(userId);
