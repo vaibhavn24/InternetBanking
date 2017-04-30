@@ -257,6 +257,7 @@ public class UserHelper {
 			e.printStackTrace();
 		}
 	}
+	
 	public void updateUser(User user) {
 		try {
 			PreparedStatement preparedStatement = connection
@@ -334,12 +335,12 @@ public class UserHelper {
 		user.setQuestionId(questionId);
 
 		EncryptDecrypt encrypt = new EncryptDecrypt();
-		String ans = encrypt.EncryptData(request.getParameter("answer"));
+		String ans = encrypt.encryptData(request.getParameter("answer"));
 		user.setAnswer(ans);
 		user.setUserName(request.getParameter("userName"));
 
 		encrypt = new EncryptDecrypt();
-		String confirmpassword = encrypt.EncryptData(request
+		String confirmpassword = encrypt.encryptData(request
 				.getParameter("confirmpassword"));
 		user.setPassword(confirmpassword);
 		user.setAccountStatus(1);
@@ -394,6 +395,7 @@ public class UserHelper {
 		return user1.getId();
 
 	}
+	
 	public static  User populateAdminValue(HttpServletRequest request) {
 		User user = new User();
 		System.out.println("populateAdminValue JSP values>> "+request.getParameter("firstName"));
@@ -471,6 +473,32 @@ public class UserHelper {
 
 	}
 
+	
+	////////////////////////////
+	
+	public static User getUserByUserNameAndPassword(String userName, String password) {
+		
+		Connection connection = null;
+		User user = null;
+		String encryptpassword = EncryptDecrypt.encryptData(password);
+		try {
+			connection = DbUtil.getConnection();
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from user where user_name = '"
+					+ userName + "'and password = '" + encryptpassword + "'");
+			
+			if (rs.next()) {
+				//user = User.populateUserByResultSet(rs);
+			}
+			
+		
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
+		
+		return user;
+	}
 	
 	
 
