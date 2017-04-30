@@ -21,7 +21,7 @@ public class CustomerForgetPwdServlet extends HttpServlet{
 		EncryptDecrypt encryptDecrypt  = new EncryptDecrypt();
 		
 		String origialpassword = request.getParameter("confirmpassword");
-		String encryptpassword = encryptDecrypt.EncryptData(origialpassword);
+		String encryptpassword = encryptDecrypt.encryptData(origialpassword);
 		String sql ="update user set password ='"+encryptpassword+"' where id='"+customerId+"'";
 		Connection connection = DbUtil.getConnection();
 		try {

@@ -26,12 +26,12 @@ public class UpdateCurrentCustomerProfileServlet extends HttpServlet {
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		user = User.populateAdminValue(request);
+		user = User.populateUserForUpadteByRequest(request);
 		int  id = Integer.parseInt(request.getParameter("updateEmpId"));
 		
 		System.out.println("Cust Profile Id>> "+id);
 		//int userType = Integer.parseInt(request.getParameter("userType1"));
-		user.updateAdmin(id);
+		user.updateUser(id);
 		userId = user.getCurrentUserId(user.getEmail());
 		Address localAddress = Address.populateLocalAddress(request, userId);
 		localAddress.updateAddress();

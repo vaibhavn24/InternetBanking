@@ -24,11 +24,11 @@ public class UpdateUserPasswordAdminEmpServlet extends HttpServlet {
 			throws ServletException, IOException {
 			String eid = request.getParameter("eid");
 		EncryptDecrypt encryptDecrypt  = new EncryptDecrypt();
-		String did = encryptDecrypt.DecryptData(eid);
+		String did = encryptDecrypt.decryptData(eid);
 		int id = Integer.parseInt(did);
 		String userName = request.getParameter("userName");
 		String password1 = request.getParameter("confirmpassword");
-		String password = encryptDecrypt.EncryptData(password1);
+		String password = encryptDecrypt.encryptData(password1);
 		String sql ="update user set user_name= ?, password =?  where id='"+id+"'";
 		connection = DbUtil.getConnection();
 		try {

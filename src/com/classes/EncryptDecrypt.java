@@ -10,10 +10,10 @@ import javax.xml.bind.DatatypeConverter;
 
 public class EncryptDecrypt {
 	public static final String ENCRYPTION_KEY = "a1b2c3d4";
-	String dataEncrypted;
-	String dataDecrypted;
-	public String EncryptData(String data) {
-		
+	
+	
+	public static String encryptData(String data) {
+		String dataEncrypted = null;
 		try {
 			dataEncrypted = encriptDES(ENCRYPTION_KEY, data);
 			
@@ -24,8 +24,8 @@ public class EncryptDecrypt {
 		return dataEncrypted;
 	}
 
-	public String DecryptData(String data){
-		
+	public static String decryptData(String data){
+		String dataDecrypted = null;
 		try {
 			dataDecrypted = decriptDES(ENCRYPTION_KEY, data);
 		} catch (IllegalBlockSizeException e) {

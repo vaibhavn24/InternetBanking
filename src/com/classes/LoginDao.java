@@ -17,7 +17,7 @@ public class LoginDao {
 		String password = null;
 		int usertype = 0;
 		EncryptDecrypt encrypt = new EncryptDecrypt();
-		String encryptpassword = encrypt.EncryptData(password1);
+		String encryptpassword = encrypt.encryptData(password1);
 		try {
 			connection = DbUtil.getConnection();
 			Statement stmt = connection.createStatement();
