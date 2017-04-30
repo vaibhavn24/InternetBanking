@@ -307,33 +307,6 @@ public class UserHelper {
 			e.printStackTrace();
 		}
 	}
-<<<<<<< HEAD
-	
-	public void updateUser(User user) {
-		try {
-			PreparedStatement preparedStatement = connection
-					.prepareStatement("update users set firstname=?, lastname=?"
-							+ "where userid=?");
-			// Parameters start with 1
-			preparedStatement.setString(1, user.getFirstName());
-			preparedStatement.setString(2, user.getLastName());
-			// preparedStatement.setInt(5, user.getUserid());
-			preparedStatement.executeUpdate();
-=======
->>>>>>> origin/master
-
-	/*
-	 * public void updateUser(User user) { try { PreparedStatement
-	 * preparedStatement = connection
-	 * .prepareStatement("update users set firstname=?, lastname=?" +
-	 * "where userid=?"); // Parameters start with 1
-	 * preparedStatement.setString(1, user.getFirstName());
-	 * preparedStatement.setString(2, user.getLastName()); //
-	 * preparedStatement.setInt(5, user.getUserid());
-	 * preparedStatement.executeUpdate();
-	 * 
-	 * } catch (SQLException e) { e.printStackTrace(); } }
-	 */
 
 	public List<User> getAllUsers() {
 		List<User> users = new ArrayList<User>();
@@ -394,21 +367,10 @@ public class UserHelper {
 		user.setResidentialStatus(rStatus);
 		int questionId = Integer.parseInt(request.getParameter("question"));
 		user.setQuestionId(questionId);
-<<<<<<< HEAD
-
-		EncryptDecrypt encrypt = new EncryptDecrypt();
-		String ans = encrypt.encryptData(request.getParameter("answer"));
-		user.setAnswer(ans);
-		user.setUserName(request.getParameter("userName"));
-
-		encrypt = new EncryptDecrypt();
-		String confirmpassword = encrypt.encryptData(request
-=======
 		String ans = EncryptDecrypt.encryptData(request.getParameter("answer"));
 		user.setAnswer(ans);
 		user.setUserName(request.getParameter("userName"));
 		String confirmpassword = EncryptDecrypt.encryptData(request
->>>>>>> origin/master
 				.getParameter("confirmpassword"));
 		user.setPassword(confirmpassword);
 		user.setAccountStatus(1);
@@ -462,13 +424,9 @@ public class UserHelper {
 		return user1.getId();
 
 	}
-<<<<<<< HEAD
-	
-	public static  User populateAdminValue(HttpServletRequest request) {
-=======
 
 	public static User populateUserForUpadteByRequest(HttpServletRequest request) {
->>>>>>> origin/master
+
 		User user = new User();
 		System.out.println("populateAdminValue JSP values>> "
 				+ request.getParameter("firstName"));
@@ -552,10 +510,7 @@ public class UserHelper {
 		return i;
 
 	}
-<<<<<<< HEAD
 
-	
-	////////////////////////////
 	
 	public static User getUserByUserNameAndPassword(String userName, String password) {
 		
@@ -580,9 +535,6 @@ public class UserHelper {
 		
 		return user;
 	}
-	
-=======
->>>>>>> origin/master
 	
 	public static User populateUserByResultSet(ResultSet rs) {
 		User user = new User();

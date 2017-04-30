@@ -11,10 +11,6 @@ import javax.xml.bind.DatatypeConverter;
 public class EncryptDecrypt {
 	public static final String ENCRYPTION_KEY = "a1b2c3d4";
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> origin/master
 	public static String encryptData(String data) {
 		String dataEncrypted = null;
 		try {
@@ -27,11 +23,8 @@ public class EncryptDecrypt {
 		return dataEncrypted;
 	}
 
-<<<<<<< HEAD
-	public String decryptData(String data){
-=======
 	public static String decryptData(String data){
->>>>>>> origin/master
+
 		String dataDecrypted = null;
 		try {
 			dataDecrypted = decriptDES(ENCRYPTION_KEY, data);
