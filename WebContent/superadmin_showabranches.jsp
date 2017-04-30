@@ -10,7 +10,7 @@
 <html>
 <head>
 <title>branch</title>
-<link href="css/css.css" rel="stylesheet" type="text/css">
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
@@ -24,7 +24,8 @@
 		document.showbranchform.submit();
 	}
 </script>
-<jsp:include page="superadmin_outside_header.jsp"></jsp:include>
+<%@ include file="superadmin_outside_header.jsp" %>
+
 <body>
 	<div id="content">
  			
@@ -81,5 +82,5 @@
 				
 		</div>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+<%@ include file="footer.jsp" %>
 </html>

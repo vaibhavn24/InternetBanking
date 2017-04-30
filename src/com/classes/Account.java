@@ -18,15 +18,16 @@ public class Account {
 	public static Long AcNum(int id)
 	{
 		Long num = null;
-		
-		for(Long i = (long) 1000000000; i<=1000000000; i++)
+		Long i ;
+		for(i = (long) 1000000000; i<=1000000000; i++)
 		{
 			num = i;
-			/*if(!validateNum(num,id))
+			if(!validateNum(num,id))
 			{
 				num = AcNum(id);
+				i = num;
 				break;
-			}*/
+			}
 			break;
 		}
 		return num;
@@ -37,7 +38,9 @@ public class Account {
 		Statement stmt;
 		try {
 			stmt = connection.createStatement();
-			String sql = "select acnumber,uid from accoutinfo where acnumber = "+num+" and uid = "+id+"";
+			
+			String sql = "select count(*) from accoutinfo where acnumber = "+num+" and uid = "+id+"";
+			//String sql = "select acnumber,uid from accoutinfo where acnumber = "+num+" and uid = "+id+"";
 			ResultSet rs = stmt.executeQuery(sql);
 			System.out.println(" Check Ac In Db>> "+sql);
 			if (rs.next()) {

@@ -55,8 +55,8 @@ $(document).ready(function(){
 </script>
 
 </head>
-<jsp:include page="customer_outside_header.jsp"></jsp:include>
-<%-- <jsp:include page="verticaltab.jsp"></jsp:include> --%>
+<%@ include file="customer_outside_header.jsp" %>
+
 <body>
 	<h4 style="text-align: center;">
 		Update Customer Register Here
@@ -407,5 +407,5 @@ $(document).ready(function(){
 		</table>
 	</form>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+<%@ include file="footer.jsp" %>
 </html>

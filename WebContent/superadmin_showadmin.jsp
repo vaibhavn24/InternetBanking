@@ -11,13 +11,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
 <link href="css/standard.css" rel="stylesheet" type="text/css">
 <link href="css/tables.css" rel="stylesheet" type="text/css">
-<link href="css/sidemenu.css" rel="stylesheet" type="text/css">
 <script type="text/javascript">
 
 function deleted(){
@@ -27,7 +26,9 @@ function deleted(){
 </script>
 <title>show admin page</title>
 </head>
-<jsp:include page="superadmin_outside_header.jsp"></jsp:include>
+
+<%@ include file="superadmin_outside_header.jsp" %>
+
 <body>
 	<div id="contentview">
 	<table class="width100">
@@ -69,8 +70,8 @@ function deleted(){
 				<td><input type="submit" value="delete" onClick="deleted()"></td>
 			</table>
 			<table class="width100">
-				<td width='66%' align='center'><a
-					href="admin_register.jsp"> <u> add new admin </u>
+			<tr>
+				<td width='66%' align='center'><a href="admin_register.jsp"> <u> add new admin </u>
 				</a></td>
 				</tr>
 			</table>

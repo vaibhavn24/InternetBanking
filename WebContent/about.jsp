@@ -1,21 +1,19 @@
-<link href="css/css.css" rel="stylesheet" type="text/css" />
-
-
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link href="css/KItables.css" rel="stylesheet" type="text/css">
+<link href="css/menu.css" rel="stylesheet" type="text/css">
+<link href="css/standard.css" rel="stylesheet" type="text/css">
+<link href="css/tables.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<style>
+.mySlides {display:none;}
+</style>
 <div id="container">
-
-
-	<jsp:include page="superadmin_outside_header.jsp"></jsp:include>
-
+<%@ include file="outside_header.jsp" %>
 	<div id="content-container">
-		<div id="content">
-			<marquee>
-				<h2 style="color: red;">
-					<i> </i>
-				</h2>
-			</marquee>
-			<br /> <br />
-
-			<p>
+		<div id="content" align="center">
+		
+		<p>
 
 				Online banking, also known as internet banking, e-banking or virtual
 				banking, is an electronic payment system that enables customers of a
@@ -48,23 +46,43 @@
 				money is in good hands.<br /> <br />
 			</p>
 		</div>
-		<%-- 
 		<div id="aside">
+		
+		<div class="w3-content" style="max-width:400px">
+  <div class="mySlides w3-container w3-red">
+    <h1><b>Did You Know?</b></h1>
+    <h1><i>We plan to sell trips to the moon in the 2020s</i></h1>
+  </div>
 
-			<h2>Login :-</h2>
-			<jsp:include page="login.jsp"></jsp:include>
-
-			<p>
-				* Online banking is the practice of making bank transactions or
-				paying bills via the Internet. <br /> <br />* Security is always
-				an issue with Internet transactions. Although information is
-				encrypted , and the chances of an account being hacked are slim, it
-				happen.
-			</p>
-
-		</div> --%>
-
-	</div>
-	<jsp:include page="footer.jsp"></jsp:include>
+  <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+    <p><span class="w3-tag w3-yellow">New!</span>
+    <p>6 Crystal Glasses</p>
+    <p>Only $99 !!!</p>
+  </div>
 
 </div>
+		
+		
+		</div>
+		<%@ include file="footer.jsp" %>
+		
+	
+</div>
+</div>
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 2000); 
+}
+</script>
+			

@@ -1,31 +1,10 @@
-<link href="css/css.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles.css">
-<link href="css/KItables.css" rel="stylesheet" type="text/css">
-<link href="css/menu.css" rel="stylesheet" type="text/css">
-<link href="css/standard.css" rel="stylesheet" type="text/css">
-<link href="css/tables.css" rel="stylesheet" type="text/css">
+
 <body>
 	<div id="header">
-		<img src="images/int.jpg" width="1340" height="150 px" />
-		<table class="width100">
-			<tr>
-				<td>
-					<table class="toplinks">
-						<tr>
-							<td>
-								<table class="toplinks">
-									<tr>
-										<td align="right"><a href="#" target="_blank">Whats
-												New!!</a> &nbsp;&nbsp;<font color=white>|</font>&nbsp;&nbsp; <a
-											href="index.jsp"> Sign out </a></td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
+		<div id="header">
+	<img src="images/index.jpg" width="100%" height="50 px" />
+</div>
+		
 		<table align='center'>
 			<tr>
 				<td></td>
@@ -67,5 +46,24 @@
 			</tr>
 		</table>
 	</div>
+	<table class="width100">
+			<tr>
+				<td>
+					<table class="toplinks">
+						<tr>
+							<td>
+								<table class="toplinks">
+									<tr>
+										<td align="right"><a href="#" target="_blank">Whats
+												New!!</a> &nbsp;&nbsp;<font color=white>|</font>&nbsp;&nbsp; <a
+											href="index.jsp"> Sign out </a></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
 </body>
 

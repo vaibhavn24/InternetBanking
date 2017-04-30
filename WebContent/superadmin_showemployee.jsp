@@ -14,6 +14,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
@@ -29,8 +30,10 @@ function deleted(){
 <title>show employee page</title>
 </head>
 <body>
-	<jsp:include page="superadmin_outside_header.jsp"></jsp:include>
+	<%@ include file="superadmin_outside_header.jsp" %>
+	
 	<table class="width100">
+			<tr>
 		<td width='66%' align='center'><a href="admin_register.jsp">
 				<u> add new employee </u>
 		</a></td>
@@ -69,6 +72,7 @@ function deleted(){
 				<td><input type="submit" value="delete" onClick="deleted()"></td>
 			</table>
 			<table class="width100">
+			<tr>
 				<td width='66%' align='center'><a
 					href="admin_register.jsp"> <u> add new employee </u>
 				</a></td>

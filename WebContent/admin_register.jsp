@@ -8,7 +8,8 @@
 	pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-<title>register page</title>
+<title>Register page</title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
@@ -40,11 +41,11 @@ $(document).ready(function(){
     });
 });
 </script>
-<jsp:include page="superadmin_outside_header.jsp"></jsp:include>
+<%@ include file="superadmin_outside_header.jsp" %>
 <body>
 	<h1 style="text-align: center;">
 		<b>Register Here</b>
-		<hr>
+		<hr/>
 	</h1>
 	<form action="adminregister" method="post"
 		onsubmit="return registerform(this);">
@@ -188,7 +189,7 @@ $(document).ready(function(){
 							<option value = "<%=userType.getId()%>"><%=userType.getName() %></option>
 							<%} } %>
 						</select>
-						&nbsp;&nbsp;&nbsp;
+						
 					</td>
 				</tr>  
 				<!-- <tr>
@@ -298,5 +299,5 @@ $(document).ready(function(){
 		</table>
 	</form>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+<%@ include file="footer.jsp" %>
 </html>

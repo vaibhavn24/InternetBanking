@@ -9,12 +9,12 @@
 <html>
 <head>
 <title>register page</title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
 <link href="css/standard.css" rel="stylesheet" type="text/css">
 <link href="css/tables.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/css.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
@@ -41,7 +41,7 @@ $(document).ready(function(){
     });
 });
 </script>
-<jsp:include page="outside_header.jsp"></jsp:include>
+<%@ include file="outside_header.jsp" %>
 <body>
 	<h1 style="text-align: center;">
 		<b>Register Here</b>
@@ -298,7 +298,7 @@ $(document).ready(function(){
 			</tr>
 		</table>
 	</form>
-	<jsp:include page="footer.jsp"></jsp:include>
+<%@ include file="footer.jsp" %>
 </body>
 
 </html>

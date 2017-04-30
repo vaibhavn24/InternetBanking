@@ -1,10 +1,7 @@
-<link href="css/KItables.css" rel="stylesheet" type="text/css">
-<link href="css/menu.css" rel="stylesheet" type="text/css">
-<link href="css/standard.css" rel="stylesheet" type="text/css">
-<link href="css/tables.css" rel="stylesheet" type="text/css">
-
 <div id="header">
-	<img src="images/int.jpg" width="1500" height="150 px" />
+	<div id="header">
+	<img src="images/index.jpg" width="100%" height="50 px" />
+  </div>
 	<table align='left'>
 		<tr>
 			<td></td>
