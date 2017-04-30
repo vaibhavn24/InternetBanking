@@ -3,10 +3,7 @@ package com.classes;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.List;
-
 import com.dbutility.DbUtil;
-import com.model.User;
 
 public class LoginDao {
 
@@ -34,10 +31,5 @@ public class LoginDao {
 		return userType;
 	}
 	
-	public static List<User> SelectedUserlist()
-	{
-		UserCache cache = new UserCache();
-		List<User> list = cache.getSelectedUser(userName);
-		return list;
-	}
+
 } 

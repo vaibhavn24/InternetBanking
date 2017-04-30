@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		User user = UserHelper.populateUser(request);
+		User user = UserHelper.populateUserByRequest(request);
 		user.insertUser();
 		userId = user.getCurrentUserId(user.getEmail());
 		 Long AcNumber = Account.AcNum(userId);

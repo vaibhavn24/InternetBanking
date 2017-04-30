@@ -10,10 +10,12 @@ public class User extends UserHelper {
 		return super.insertUser();
 	}
 	@Override
-	public int updateAdmin(int id) {
+	public int updateUser(int id) {
 		// TODO Auto-generated method stub
-		return super.updateAdmin(id);
+		return super.updateUser(id);
 	}
+	
+	
 	
 	
 

@@ -1,52 +1,60 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Customer Home</title>
+</head>
 <body>
+
 	<div id="header">
-		<div id="header">
+	
+	<div id="header">
 	<img src="images/index.jpg" width="100%" height="50 px" />
 </div>
+	
+	</div>
+
+	<div id="navigation">
+		<ul>
+
+			<li><a href="home.jsp">Home</a></li>
 		
-		<table align='center'>
-			<tr>
-				<td></td>
-				<td>
-					<ul id="sddm">
-						<li class="dropdown"><a href="home.jsp" class="dropbtn">Home</a>
-							<!-- <div class="dropdown-content">
-											      <a href="index.jsp">Home</a>
-											      <a href="#">Link 2</a>
-											      <a href="#">Link 3</a>
-											    </div> --></li>
-						<li class="dropdown"><a href="prodandserv.jsp"
-							class="dropbtn">Profile</a>  <div class="dropdown-content">
-											    <!--   <a href="addSecurityQuestion.jsp">Add</a> -->
-											      <a href="#">Show</a>
-											  <!--     <a href="super_adminshow_questions.jsp">Update</a> -->
-											    </div> </li>
-						<li class="dropdown"><a href="help.jsp" class="dropbtn">User</a>
-							<div class="dropdown-content">
-								<!-- <a href="superadmin_showadmin.jsp">Admin</a> 
-								<a href="superadmin_showemployee.jsp">Employee</a>
-								<a href="superadmin_showcustomer.jsp">Customer</a> -->
-								<!--  <a href="#">Link 3</a> -->
-							</div></li>
-						<li class="dropdown">
-								<a href="aboutus.jsp" class="dropbtn">Setting</a>
-									<div class="dropdown-content">
-										<a href="superadmin_showabranches.jsp"></a>
-									</div>
-						</li>
-						<li class="dropdown">
+			<li class="dropdown">
+			<a href="javascript:void(0)" class="dropbtn">Profile</a>
+           <div class="dropdown-content">
+            <a href="#">Show</a>
+          </div>
+			</li>
+			
+			<!-- <li class="dropdown">
+			<a href="javascript:void(0)">Admin</a>
+			<div class="dropdown-content">
+			<a href="addAdmin.jsp">Add Admin</a>
+			<a href="viewAdminList.jsp">Update Admin</a>
+			<a href="deleteAdmin.jsp">Delete Admin</a>
+			</div>
+			</li> -->
+			<li class="dropdown">
+			<a href="about.jsp">About Us</a>
+			</li>
+			
+			<li class="dropdown">
+			<a href="contact.jsp">Contact Us</a>
+			
+			</li>
+			
+			
+			<li class="dropdown">
 							 <a href="prodandserv.jsp" class="dropbtn">Services</a>
 								<div class="dropdown-content">
 									<a href="superadmin_showservices.jsp">show services</a>
 								</div> 
 						</li> 
-					</ul>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<table class="width100">
+						</ul>
+						</div>
+						<table class="width100">
 			<tr>
 				<td>
 					<table class="toplinks">
@@ -64,6 +72,6 @@
 					</table>
 				</td>
 			</tr>
-		</table>
+		</table>			
 </body>
-
+</html>
