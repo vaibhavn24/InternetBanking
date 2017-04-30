@@ -15,7 +15,7 @@
 </head>
 <script type="text/javascript" src="validation.js" ></script>
 <body>
-	<form action="signin" method="post" onsubmit="return checklogin(this);">
+	<form action="login" method="post" onsubmit="return checklogin(this);">
 		<table>
 			<tr>
 				<td align='center' colspan="2"><font size="2"><strong>Username:</strong></font>

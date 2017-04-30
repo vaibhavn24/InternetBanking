@@ -46,7 +46,7 @@
 											    </div> </li>
 						<li class="dropdown"><a href="help.jsp" class="dropbtn">User</a>
 							<div class="dropdown-content">
-								<a href="superadmin_showadmin.jsp">Admin</a> 
+                                <a href="superadmin_showadmin.jsp"></a>
 								<a href="superadmin_showemployee.jsp">Employee</a>
 								<a href="superadmin_showcustomer.jsp">Customer</a>
 								<!--  <a href="#">Link 3</a> -->

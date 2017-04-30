@@ -5,7 +5,7 @@ public class SendMailToRegisterEmployeeAdmin {
 	
 	public static void sendMailEmpAdmin(String userId ,String email){
 		EncryptDecrypt enDecrypt = new EncryptDecrypt();
-	    String eid = enDecrypt.EncryptData(userId);
+	    String eid = enDecrypt.encryptData(userId);
 		String subject= "change the password of the account"; 
 		   
 	    String msg=  "Hello; "

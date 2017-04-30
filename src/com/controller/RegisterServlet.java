@@ -7,6 +7,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.classes.Account;
+import com.helper.AccountHelper;
+import com.helper.AccountInterface;
 import com.helper.AddressHelper;
 import com.helper.CustomerTypeHelper;
 import com.helper.UserHelper;
@@ -25,10 +29,13 @@ public class RegisterServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		User user = UserHelper.populateUser(request);
+		User user = UserHelper.populateUserByRequest(request);
 		user.insertUser();
 		userId = user.getCurrentUserId(user.getEmail());
-
+		 Long AcNumber = Account.AcNum(userId);
+		 System.out.println("Your A/C Num is >> "+AcNumber);
+		 AccountHelper.insertAcNumber(AcNumber,userId);
+		 
 		CustomerType customerType = CustomerTypeHelper.populateCustomerType(
 				request);
 		customerType.insertCustomerType();

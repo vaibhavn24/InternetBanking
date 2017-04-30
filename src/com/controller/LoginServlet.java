@@ -1,8 +1,6 @@
 package com.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,36 +9,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.classes.LoginDao;
 import com.model.User;
 
-public class SignInServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-	RequestDispatcher rd;
-	
-//hi this is git hub testing.....
-
-	//hello..
-
-	//hi this is nilesh testing
-
-//hi bhushan how are you
-	//shrikant hiiiiiiii....
-//nilu how are you.....
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd;
+		RequestDispatcher rd = null;
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+		// PrintWriter out = response.getWriter();
 		String username = request.getParameter("userName");
-		String originalPwd = request.getParameter("password");
-		int userType = LoginDao.validate(username, originalPwd);
-		HttpSession session = request.getSession();
-		List<User> currentuserlist = LoginDao.SelectedUserlist();
-		for(User user : currentuserlist){
-		session.setAttribute("CurrentUserList", user);
+		String originalPassword = request.getParameter("password");
+
+		User user = User.getUserByUserNameAndPassword(username,
+				originalPassword);
+
+		if (user == null) {
+			rd = request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
 		}
+
+		int userType = user.getUserType();
+		System.out.println("In log in Servlet"+userType);
+		HttpSession session = request.getSession();
+		session.setAttribute("loggedInUser", user);
+
 		switch (userType) {
 		case 1: {
 			rd = request.getRequestDispatcher("superadmin_home.jsp");
