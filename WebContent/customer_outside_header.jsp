@@ -19,7 +19,7 @@
 	<div id="navigation">
 		<ul>
 
-			<li><a href="home.jsp">Home</a></li>
+			<li><a href="customer_home.jsp">Home</a></li>
 		
 			<li class="dropdown">
 			<a href="javascript:void(0)" class="dropbtn">Profile</a>

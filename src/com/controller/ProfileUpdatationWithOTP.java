@@ -20,8 +20,8 @@ public class ProfileUpdatationWithOTP extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id)"));
-		System.out.println("id>>>"+id);
+		/*int id = Integer.parseInt(request.getParameter("id)"));
+		System.out.println("id>>>"+id);*/
 		String UserOTP = request.getParameter("otp");
 		String OriginalOTP1 = SendMailForOTP.OTP ;
 		String OriginalOTP = String.valueOf(OriginalOTP1);
