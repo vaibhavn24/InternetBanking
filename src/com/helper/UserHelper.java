@@ -463,6 +463,7 @@ public class UserHelper {
 			System.out.println(getImage());
 			pst.setBlob(11, getImage());
 			i = pst.executeUpdate();
+			System.out.println(i);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
