@@ -19,27 +19,22 @@ public class LoginServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = null;
 		response.setContentType("text/html");
-		//PrintWriter out = response.getWriter();
+		// PrintWriter out = response.getWriter();
 		String username = request.getParameter("userName");
 		String originalPassword = request.getParameter("password");
-		
-		User user = User.getUserByUserNameAndPassword(username, originalPassword);
-		
-		if(user == null) {
-			rd = request.getRequestDispatcher("admin_home.jsp");
-			rd.forward(request, response);	
+
+		User user = User.getUserByUserNameAndPassword(username,
+				originalPassword);
+
+		if (user == null) {
+			rd = request.getRequestDispatcher("index.jsp");
+			rd.forward(request, response);
 		}
-		
+
 		int userType = user.getUserType();
 		HttpSession session = request.getSession();
 		session.setAttribute("loggedInUser", user);
-		
-		/*List<User> currentuserlist = LoginDao.SelectedUserlist();
-		for(User user : currentuserlist){
-		session.setAttribute("CurrentUserList", user);
-		}*/
-		
-		
+
 		switch (userType) {
 		case 1: {
 			rd = request.getRequestDispatcher("superadmin_home.jsp");

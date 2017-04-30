@@ -524,9 +524,8 @@ public class UserHelper {
 					+ userName + "'and password = '" + encryptpassword + "'");
 			
 			if (rs.next()) {
-				//user = User.populateUserByResultSet(rs);
+				user = User.populateUserByResultSet(rs);
 			}
-			
 		
 		} catch (Exception e) {
 			System.out.println(e);
@@ -539,10 +538,10 @@ public class UserHelper {
 	public static User populateUserByResultSet(ResultSet rs) {
 		User user = new User();
 		try {
-			user.setFirstName(rs.getString(2));
+		user.setFirstName(rs.getString(2));
 		user.setLastName(rs.getString(3));
-		user.setMotherName(rs.getString(4));
-		user.setGender(rs.getInt(5));
+		user.setGender(rs.getInt(4));
+		user.setMotherName(rs.getString(5));
 		user.setEmail(rs.getString(6));
 		user.setPrimaryPhoneNumber(rs.getString(7));
 		user.setSecondaryPhoneNumber(rs.getString(8));
@@ -550,13 +549,14 @@ public class UserHelper {
 		user.setDateOfBirth(date);
 		user.setAadharcard(rs.getString(10));
 		user.setPancard(rs.getString(11));
-		user.setResidentialStatus(rs.getInt(12));
-		user.setQuestionId(rs.getInt(13));
-		String ans = EncryptDecrypt.decryptData(rs.getString(14));
+		
+		user.setQuestionId(rs.getInt(12));
+		String ans = EncryptDecrypt.decryptData(rs.getString(13));
 		user.setAnswer(ans);
-		user.setUserName(rs.getString(15));
-		user.setPassword(rs.getString(16));
-		user.setAccountStatus(rs.getInt(17));
+		user.setUserName(rs.getString(14));
+		user.setPassword(rs.getString(15));
+		user.setAccountStatus(rs.getInt(16));
+		user.setResidentialStatus(rs.getInt(17));
 		user.setAccountCreationDate(rs.getDate(18));
 		user.setPasswordModifiedDate(rs.getTimestamp(19));
 		user.setProfileModifiedDate(rs.getTimestamp(20));
