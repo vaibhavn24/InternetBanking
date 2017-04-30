@@ -27,8 +27,8 @@
 				<tr>
 					<td width=30%>Email</td>
 					<td width=70%><input type="text" name="email"
-						placeholder="Email" size=25 maxlength=25
-						title="max. 25 characters"> &nbsp;&nbsp;&nbsp;</td>
+						placeholder="Email" size=50 maxlength=50
+						title="max. 50 characters"> &nbsp;&nbsp;&nbsp;</td>
 				</tr>
 				<tr>
 					<td colspan="2" align='center'>
