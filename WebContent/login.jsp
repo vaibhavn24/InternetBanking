@@ -38,7 +38,7 @@
 			</tr>
 		</table>
 		<br> <br> <br> Yet Not Registered!! <a
-			href="register.jsp">Register Here</a>
+			href="register.jsp">Register Here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 	
 	</form>
