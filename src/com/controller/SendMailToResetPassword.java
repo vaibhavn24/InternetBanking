@@ -33,8 +33,10 @@ public class SendMailToResetPassword extends HttpServlet{
 	    User user = new User();
 	    int userid = user.getCurrentUserId(to);
 	    String id = String.valueOf(userid);
-	    EncryptDecrypt enDecrypt = new EncryptDecrypt();
-	    String eid = enDecrypt.encryptData(id);
+
+	  
+	    String eid = EncryptDecrypt.encryptData(id);
+
 	    con = DbUtil.getConnection();
 	    String sql ="select email from user where email like '"+to+"' "; 
 	    try {

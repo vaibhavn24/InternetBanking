@@ -6,7 +6,7 @@
 	pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-<link href="css/css.css" rel="stylesheet" type="text/css">
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
@@ -14,15 +14,16 @@
 <link href="css/tables.css" rel="stylesheet" type="text/css">
 </head>
 <script type="text/javascript" src="validation.js"></script>
-<jsp:include page="outside_header.jsp"></jsp:include>
+
+<%@ include file="outside_header.jsp" %>
 <body>
 	<div id="content">
-		<h4 style="text-align: left;">
+		<h4 style="text-align: center;">
 			<b>Please Enter the New Password Below</b>
 		</h4>
 		<form action="forgetpassword" method="post"
 			onsubmit="return forgetpasswordform(this);">
-			<table class="table50" align='left'>
+			<table class="table50" align='center'>
 				<tr>
 					<td width=30%>New Password</td>
 					<td width=70%><input type="password" name="password"
@@ -49,5 +50,5 @@
 		</form>
 	</div>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+<%@ include file="footer.jsp" %>
 </html>

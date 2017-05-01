@@ -5,11 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
-	<link href="css/KItables.css" rel="stylesheet" type="text/css">
-	<link href="css/menu.css" rel="stylesheet" type="text/css">
-	<link href="css/standard.css" rel="stylesheet" type="text/css">
-	<link href="css/tables.css" rel="stylesheet" type="text/css">
+<link href="css/KItables.css" rel="stylesheet" type="text/css">
+<link href="css/menu.css" rel="stylesheet" type="text/css">
+<link href="css/standard.css" rel="stylesheet" type="text/css">
+<link href="css/tables.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
 		var message = "<?= $sgCaption ?>";
 </script>
@@ -17,7 +18,7 @@
 <title>admin show</title>
 </head>
 <body>
-<jsp:include page="superadmin_outside_header.jsp"></jsp:include>
+<%@ include file="superadmin_outside_header.jsp" %>
 				
 			
 				<center>

@@ -13,13 +13,12 @@ import com.model.User;
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = null;
 		response.setContentType("text/html");
-		// PrintWriter out = response.getWriter();
+
 		String username = request.getParameter("userName");
 		String originalPassword = request.getParameter("password");
 

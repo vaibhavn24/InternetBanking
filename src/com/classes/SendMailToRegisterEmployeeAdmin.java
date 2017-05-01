@@ -1,11 +1,12 @@
 package com.classes;
 
 public class SendMailToRegisterEmployeeAdmin {
+
 	
 	
 	public static void sendMailEmpAdmin(String userId ,String email){
-		EncryptDecrypt enDecrypt = new EncryptDecrypt();
-	    String eid = enDecrypt.encryptData(userId);
+	
+	    String eid = EncryptDecrypt.encryptData(userId);
 		String subject= "change the password of the account"; 
 		   
 	    String msg=  "Hello; "
@@ -13,13 +14,7 @@ public class SendMailToRegisterEmployeeAdmin {
 	    		+"http://localhost:8081/InternetBanking/UpdateUserPasswordAdminEmployeeRegisterServlet?eid="+eid;
 	          
 	    Mailer.send(email, subject, msg);
-	    
-	 
-		
-		
-		
-		
-		
+
 	}
 
 }

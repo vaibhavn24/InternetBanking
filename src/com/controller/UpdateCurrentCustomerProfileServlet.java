@@ -16,6 +16,10 @@ import com.model.UserType;
 
 @MultipartConfig
 public class UpdateCurrentCustomerProfileServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2544900615931254722L;
 	User user = null;
 	UserType userType = null;
 	CustomerType customerType = null;

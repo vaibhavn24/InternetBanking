@@ -22,12 +22,13 @@
 <html>
 <title>admin customer page</title>
 <head>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
 <link href="css/menu.css" rel="stylesheet" type="text/css">
 <link href="css/standard.css" rel="stylesheet" type="text/css">
 <link href="css/tables.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="css/css.css">
+
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 
@@ -56,7 +57,8 @@ $(document).ready(function(){
 
 </head>
 <script type="text/javascript" src="validation.js"></script>
-<jsp:include page="superadmin_outside_header.jsp"></jsp:include>
+<%@ include file="superadmin_outside_header.jsp" %>
+
 <body>
 	<h4 style="text-align: center;">
 		Update Customer Register Here
@@ -407,5 +409,5 @@ $(document).ready(function(){
 		</table>
 	</form>
 </body>
-<jsp:include page="footer.jsp"></jsp:include>
+<%@ include file="footer.jsp" %>
 </html>

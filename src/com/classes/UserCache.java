@@ -69,24 +69,17 @@ public class UserCache {
 		return list;
 	}
 
-	public  List<User>  getSelectedUserFromCache(String user_name){
-		if(list == null){
-			list = getSelectedUserFromDB(user_name);
-		}
-		return list;
-	}
 	
-	public List<User> getSelectedUserFromDB(String user_name) {
-		// TODO Auto-generated method stub
-		List<User> list = new ArrayList<User>();
-		connection = DbUtil.getConnection();
+	public static User getSelectedUser(String user_name) {
+		User user = null;
+		Connection connection = DbUtil.getConnection();
 		String sql = "select * from user where user_name = '"+user_name+"'";
 		try {
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			while(rs.next())
 			{
-				User user = new User();
+				user = new User();
 				user.setId(rs.getInt(1));
 				user.setFirstName(rs.getString(2));
 				user.setLastName(rs.getString(3));
@@ -111,14 +104,11 @@ public class UserCache {
 				user.setUserType(rs.getInt(22));
 				user.setCustomerType(rs.getInt(23));
 				//user.setImage((InputStream) rs.getBlob(24));
-				list.add(user);
 			}
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return list;
+		return user;
 	}
 }

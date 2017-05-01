@@ -10,7 +10,9 @@
 
 
 	<div id="header">
-		<img src="images/int.jpg" width="1400" height="200 px" />
+		<div id="header">
+	<img src="images/index.jpg" width="100%" height="50 px" />
+</div>
 
 	</div>
 

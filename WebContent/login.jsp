@@ -6,11 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%-- <jsp:include page="usertype.jsp"></jsp:include> --%>
 <%-- <%@ include file="usertype.jsp" %> --%>
-<link href="css/css.css" rel="stylesheet" type="text/css">
-<link href="css/KItables.css" rel="stylesheet" type="text/css">
-<link href="css/menu.css" rel="stylesheet" type="text/css">
-<link href="css/standard.css" rel="stylesheet" type="text/css">
-<link href="css/tables.css" rel="stylesheet" type="text/css">
 
 </head>
 <script type="text/javascript" src="validation.js" ></script>
@@ -45,7 +40,7 @@
 		<br> <br> <br> Yet Not Registered!! <a
 			href="register.jsp">Register Here</a>
 
-		</table>
+	
 	</form>
 </body>
 </html>
