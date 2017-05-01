@@ -1,7 +1,7 @@
-<div id="header">
-	<img src="images/index.jpg" width="100%" height="50 px" />
+<div id="header" align="center" style="background-color:white;">
+	<img src="images/logo2.png" width="30%" height="80px" />
 </div>
-
+<hr />
 <div id="navigation">
 	<ul>
 
