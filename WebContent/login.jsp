@@ -14,7 +14,7 @@
 		<table>
 			<tr>
 				<td align='center' colspan="2"><font size="2"><strong>Username:</strong></font>
-					<input type="text" name="userName" id="TextBox"></td><br>
+					<input type="text" name="userName" id="TextBox" ></td><br>
 			</tr>
 			<tr>
 				<td align='center' colspan="2"><font size="2"><strong>Password:</strong></font>
@@ -38,7 +38,7 @@
 			</tr>
 		</table>
 		<br> <br> <br> Yet Not Registered!! <a
-			href="register.jsp">Register Here</a>
+			href="register.jsp">Register Here</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 
 	
 	</form>

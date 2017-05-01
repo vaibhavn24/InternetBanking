@@ -239,7 +239,7 @@ div.tab button.active {
 			<td colspan="2" align='center'>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<input type="hidden" name = "customerId" value="<%=user.getId()%>">
+				<input type="hidden" name = "id" value="<%=user.getId()%>">
 				 <input type="submit"name="submit" value="Save"> 
 				 <input type="Reset" name="Reset" value="Reset"></td>
 			</tr>

@@ -64,7 +64,8 @@
 								<table class="toplinks">
 									<tr>
 										<td align="right"><a href="#" target="_blank">Whats
-												New!!</a> &nbsp;&nbsp;<font color=white>|</font>&nbsp;&nbsp; <a
+												New!!</a> &nbsp;&nbsp;<font color=white>|</font>&nbsp;&nbsp;
+												 <a
 											href="index.jsp"> Sign out </a></td>
 									</tr>
 								</table>

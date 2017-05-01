@@ -69,7 +69,7 @@ $(document).ready(function(){
 					<th colspan=2>Personal Information</th>
 				</tr> 
 				<% 
-				int id = Integer.parseInt(request.getParameter("ilRecId"));
+				int id = Integer.parseInt(request.getParameter("id"));
 				CustomerInterface customer1 = new CustomerHelper();
 				
 				 User customer = customer1.showSelectedCustomer(id);
@@ -398,7 +398,7 @@ $(document).ready(function(){
 		<table class="tabl100" align='left'>
 		<tr>
 				<td colspan="2" align='center'>
-					  <input type="hidden"  name="updateEmpId" value=<%=Integer.parseInt(request.getParameter("ilRecId"))%>>
+					  <input type="hidden"  name="updateEmpId" value=<%=Integer.parseInt(request.getParameter("id"))%>>
 					 <input type="submit" name="submit" value="Update"> 
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					
