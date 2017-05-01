@@ -546,7 +546,7 @@ public class UserHelper {
 		user.setEmail(rs.getString(6));
 		user.setPrimaryPhoneNumber(rs.getString(7));
 		user.setSecondaryPhoneNumber(rs.getString(8));
-		String date = new SimpleDateFormat().format(rs.getDate(9));
+		String date = new SimpleDateFormat("YYYY/MM/dd").format(rs.getDate(9));
 		user.setDateOfBirth(date);
 		user.setAadharcard(rs.getString(10));
 		user.setPancard(rs.getString(11));

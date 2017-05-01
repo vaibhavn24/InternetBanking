@@ -107,8 +107,7 @@ div.tab button.active {
 </head>
 <body>
 <%
-	HttpSession httpSession = request.getSession();
-		User user = (User)httpSession.getAttribute("loggedInUser");
+		User user = (User)session.getAttribute("loggedInUser");
 	
 %>
 	<div class="tab">
