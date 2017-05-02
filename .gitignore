@@ -2,3 +2,4 @@ d use /build/
 /build/
 
 WebContent/login.jsp
+WebContent/superadmin_outside_header.jsp
