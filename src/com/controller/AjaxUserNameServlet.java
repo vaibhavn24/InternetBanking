@@ -11,32 +11,31 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.classes.EmailUsernameVerification;
 
-public class AjaxUserNameServlet extends HttpServlet{
-	
-	 
+public class AjaxUserNameServlet extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			  throws ServletException, IOException {
-			    doPost(request, response);
-			  }
+			throws ServletException, IOException {
+		doPost(request, response);
+	}
 
-			  public void doPost(HttpServletRequest request, HttpServletResponse response)
-			  throws ServletException, IOException {
-				  Boolean b = false;
-				    String userName = request.getParameter("username");
-				    EmailUsernameVerification euvs = new EmailUsernameVerification();
-				    try {
-						 b  = euvs.isUserNameExist(userName);
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				    
-				    if (b == true){
-					    PrintWriter out = response.getWriter();
-					    out.println("userName Exist Please Enter Different");
-				    }
-			  }
-			  
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Boolean b = false;
+		String userName = request.getParameter("username");
+		EmailUsernameVerification euvs = new EmailUsernameVerification();
+		try {
+			b = euvs.isUserNameExist(userName);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		if (b == true) {
+			PrintWriter out = response.getWriter();
+			out.println("userName Exist Please Enter Different");
+		}
+	}
+
 }

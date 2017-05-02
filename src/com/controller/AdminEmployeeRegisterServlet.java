@@ -24,16 +24,19 @@ public class AdminEmployeeRegisterServlet extends HttpServlet {
 	CustomerType customerType = null;
 	RequestDispatcher rd;
 	int userId;
+
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd;
+		int userId;
 		User user = UserHelper.populateUserByRequest(request);
 		user.insertUser();
 		userId = user.getCurrentUserId(user.getEmail());
 		String id = String.valueOf(userId);
 		SendMailToRegisterEmployeeAdmin.sendMailEmpAdmin(id, user.getEmail());
-		CustomerType customerType = CustomerTypeHelper.populateCustomerType(
-				request);
+		CustomerType customerType = CustomerTypeHelper
+				.populateCustomerType(request);
 		customerType.insertCustomerType();
 		Address localAddress = AddressHelper.populateLocalAddress(request,
 				userId);

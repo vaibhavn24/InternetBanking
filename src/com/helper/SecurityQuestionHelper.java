@@ -12,13 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.dbutility.DbUtil;
 import com.model.Question;
-import com.model.User;
 
-public class SecurityQuestionHelper implements SecurityQuestionInterface{
-	
+public class SecurityQuestionHelper implements SecurityQuestionInterface {
+
 	private Connection connection;
 	Question question = null;
-	
+
 	public SecurityQuestionHelper() {
 		connection = DbUtil.getConnection();
 	}
@@ -37,39 +36,39 @@ public class SecurityQuestionHelper implements SecurityQuestionInterface{
 		}
 		return q;
 	}
-	
-	
+
 	public int deleteSecurityQuestion(String id) {
 		int i = 0;
 		try {
-			String sql = "DELETE FROM security_question WHERE id IN("+id+")";
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			String sql = "DELETE FROM security_question WHERE id IN(" + id
+					+ ")";
+			PreparedStatement preparedStatement = connection
+					.prepareStatement(sql);
 			i = preparedStatement.executeUpdate();
 			System.out.println(i);
-	        System.out.println("deleted");
+			System.out.println("deleted");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return i;
 	}
-	
-	public List<Question> showQuestion(){
-		
+
+	public List<Question> showQuestion() {
+
 		List<Question> list = new ArrayList<Question>();
 		String sql = "select * from security_question";
 		try {
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
-			while(rs.next())
-			{
+			while (rs.next()) {
 				Question question = new Question();
 				question.setId(rs.getInt(1));
 				question.setName(rs.getString(2));
 				list.add(question);
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -79,19 +78,18 @@ public class SecurityQuestionHelper implements SecurityQuestionInterface{
 
 	public Question showSelectedSecurityQuestion(int id) {
 		Question question = null;
-		System.out.println("method selected Id>> "+id);
-		String sql = "select * from security_question where id = "+id+"";
+		System.out.println("method selected Id>> " + id);
+		String sql = "select * from security_question where id = " + id + "";
 		try {
-			
+
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery(sql);
-			while(resultSet.next())
-			{
+			while (resultSet.next()) {
 				question = new Question();
 				question.setId(resultSet.getInt(1));
 				question.setName(resultSet.getString(2));
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -101,10 +99,12 @@ public class SecurityQuestionHelper implements SecurityQuestionInterface{
 
 	public int updateSecurityQuestion(int id, String name) {
 		int i = 0;
-		String sql = "update security_question set name = '"+name+"' where id = "+id+"";
+		String sql = "update security_question set name = '" + name
+				+ "' where id = " + id + "";
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			System.out.println("Update Security Question SQL Query>> "+sql);
+			PreparedStatement preparedStatement = connection
+					.prepareStatement(sql);
+			System.out.println("Update Security Question SQL Query>> " + sql);
 			i = preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -114,9 +114,9 @@ public class SecurityQuestionHelper implements SecurityQuestionInterface{
 	}
 
 	public Question setSecurityQuestionValue(HttpServletRequest request) {
-		
+
 		question = new Question();
 		question.setName(request.getParameter("securityQuestion"));
 		return question;
-	}	
+	}
 }

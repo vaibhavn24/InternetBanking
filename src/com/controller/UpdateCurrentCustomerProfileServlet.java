@@ -16,62 +16,28 @@ import com.model.UserType;
 
 @MultipartConfig
 public class UpdateCurrentCustomerProfileServlet extends HttpServlet {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2544900615931254722L;
-	User user = null;
-	UserType userType = null;
-	CustomerType customerType = null;
-	RequestDispatcher rd;
-	int userId;
+	
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		User user = null;
+		RequestDispatcher rd;
+		int userId;
 
 		user = User.populateUserForUpadteByRequest(request);
-		int  id = Integer.parseInt(request.getParameter("updateEmpId"));
-		
-		System.out.println("Cust Profile Id>> "+id);
-		//int userType = Integer.parseInt(request.getParameter("userType1"));
+		int id = Integer.parseInt(request.getParameter("updateEmpId"));
 		user.updateUser(id);
 		userId = user.getCurrentUserId(user.getEmail());
 		Address localAddress = Address.populateLocalAddress(request, userId);
 		localAddress.updateAddress();
-		Address permanantAddress = Address.populatePermanantAddress(request, userId);
+		Address permanantAddress = Address.populatePermanantAddress(request,
+				userId);
 		permanantAddress.insertAddress();
-		
+
 		rd = request.getRequestDispatcher("customer_home.jsp");
 		rd.forward(request, response);
-		
-		/*switch (userType) {
-		case 1: {
-			rd = request.getRequestDispatcher("superadmin_home.jsp");
-			rd.forward(request, response);
-			break;
-		}
-		case 2: {
-			rd = request.getRequestDispatcher("admin_home.jsp");
-			rd.forward(request, response);
-			break;
-		}
-		case 3: {
-			rd = request.getRequestDispatcher("employee_home.jsp");
-			rd.forward(request, response);
-			break;
-		}
-		case 4: {
-			rd = request.getRequestDispatcher("customer_home.jsp");
-			rd.forward(request, response);
-			break;
-		}
-		default: {
-			rd = request.getRequestDispatcher("superadmin_home.jsp");
-			rd.forward(request, response);
-		}
-		
-	}*/
 
-}
+	}
 }

@@ -12,21 +12,23 @@ import com.dbutility.DbUtil;
 import com.model.User;
 
 public class EmployeeHelper implements EmployeeInterface {
-	
+
 	private Connection connection;
 	User user = null;
-	public EmployeeHelper(){
+
+	public EmployeeHelper() {
 		connection = DbUtil.getConnection();
 	}
 
 	@Override
 	public List<User> getAllEmployee() {
-		
+
 		List<User> users = new ArrayList<User>();
 		try {
 			Statement statement = connection.createStatement();
 
-			ResultSet rs = statement.executeQuery("select * from user where usertype = 3");
+			ResultSet rs = statement
+					.executeQuery("select * from user where usertype = 3");
 			while (rs.next()) {
 				User user = new User();
 				user.setId(rs.getInt(1));
@@ -52,24 +54,23 @@ public class EmployeeHelper implements EmployeeInterface {
 				user.setLastAccessTime(rs.getTimestamp(21));
 				user.setUserType(rs.getInt(22));
 				user.setCustomerType(rs.getInt(23));
-				//user.setImage((InputStream) rs.getBlob(24));
+				// user.setImage((InputStream) rs.getBlob(24));
 				users.add(user);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return users;
-		
+
 	}
 
 	public User showSelectedEmployee(int id) {
-		String sql = "select * from user where id = "+id+"";
+		String sql = "select * from user where id = " + id + "";
 		try {
-			
+
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
-			while(rs.next())
-			{
+			while (rs.next()) {
 				user = new User();
 				user.setId(rs.getInt(1));
 				user.setFirstName(rs.getString(2));
@@ -94,9 +95,9 @@ public class EmployeeHelper implements EmployeeInterface {
 				user.setLastAccessTime(rs.getTimestamp(21));
 				user.setUserType(rs.getInt(22));
 				user.setCustomerType(rs.getInt(23));
-				//user.setImage((InputStream) rs.getBlob(24));
+				// user.setImage((InputStream) rs.getBlob(24));
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -108,8 +109,9 @@ public class EmployeeHelper implements EmployeeInterface {
 	public void deleteEmloyee(String id) {
 		// TODO Auto-generated method stub
 		try {
-			String sql = "DELETE FROM user WHERE id IN("+id+")";
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			String sql = "DELETE FROM user WHERE id IN(" + id + ")";
+			PreparedStatement preparedStatement = connection
+					.prepareStatement(sql);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -10,30 +10,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.helper.BranchesHelper;
 import com.helper.BranchesHelperInterface;
-import com.helper.SecurityQuestionHelper;
-import com.helper.SecurityQuestionInterface;
 
 public class DeleteBranchServlet extends HttpServlet {
-	RequestDispatcher rd;
+	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd;
 		BranchesHelperInterface bInterface = new BranchesHelper();
 		String selectedId[] = request.getParameterValues("id");
-
-		/*
-		 * For Checking 
-		 * 
-		 * if (selectedId != null && selectedId.length != 0) {
-			System.out.println("You have selected: ");
-			for (int i = 0; i < selectedId.length; i++) {
-				System.out.println("selected Ids>> " + selectedId[i]);
-			}
-		}*/
-
-		String selectedMuliipleIds = "";
+		// String selectedMuliipleIds = "";
 		StringBuffer sb = new StringBuffer();
 
 		for (int i = 0; i < selectedId.length; i++) {
@@ -42,12 +29,7 @@ public class DeleteBranchServlet extends HttpServlet {
 
 		String id = sb.toString();
 		id = id.substring(0, id.length() - 1);
-		System.out.print("selected ID>>  " + id);
-
-		int i = bInterface.deleteBranch(id);
-		if (i > 0) {
-			System.out.println("Delete record successifully>> ");
-		}
+		bInterface.deleteBranch(id);
 		rd = request.getRequestDispatcher("superadmin_showabranches.jsp");
 		rd.forward(request, response);
 	}

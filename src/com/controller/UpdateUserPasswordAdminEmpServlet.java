@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,19 +16,19 @@ import com.dbutility.DbUtil;
 
 public class UpdateUserPasswordAdminEmpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Connection connection;
-	PreparedStatement statement;
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-			String eid = request.getParameter("eid");
-		EncryptDecrypt encryptDecrypt  = new EncryptDecrypt();
-		String did = encryptDecrypt.decryptData(eid);
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		Connection connection;
+		PreparedStatement statement;
+		String eid = request.getParameter("eid");
+		String did = EncryptDecrypt.decryptData(eid);
 		int id = Integer.parseInt(did);
 		String userName = request.getParameter("userName");
 		String password1 = request.getParameter("confirmpassword");
-		String password = encryptDecrypt.encryptData(password1);
-		String sql ="update user set user_name= ?, password =?  where id='"+id+"'";
+		String password = EncryptDecrypt.encryptData(password1);
+		String sql = "update user set user_name= ?, password =?  where id='"
+				+ id + "'";
 		connection = DbUtil.getConnection();
 		try {
 			statement = connection.prepareStatement(sql);

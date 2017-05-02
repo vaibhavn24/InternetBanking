@@ -1,21 +1,27 @@
 function checklogin(form) {
-	if (form.userName.value == "") {
-		alert("Error: userName cannot be blank!");
-		form.userName.focus();
-		return false;
+	var userName = document.getElementById('userName').value;
+	var password = document.getElementById('password').value;
+	submit = true;
+	
+	if(userName == '')
+	{
+	    document.getElementById('userName_error').innerHTML = "UserName Is Required";
+	    return false;
 	}
-	if (form.password.value == "") {
-		alert("Error: Password cannot be blank!");
-		form.userName.focus();
-		return false;
+	if(password == '')
+	{
+	    document.getElementById('password_error').innerHTML = "Password Is Required";
+	    return false;
 	}
-	if (form.password.value.length < 6) {
-		alert("Error: Password must contain at least six characters!");
-		form.password.focus();
-		return false;
-	}
-	return true;
+	return submit;
+	document.getElementById('userName').onkeyup = removewarning;
+	document.getElementById('password').onkeyup = removewarning;
 }
+function removewarning()
+{
+document.getElementById(this.id +'_error').innerHTML = "";
+} 
+
 
 function registerform(form) {
 	/*var e = document.getElementById("gender");

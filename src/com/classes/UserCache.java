@@ -13,26 +13,25 @@ import com.model.Question;
 import com.model.User;
 
 public class UserCache {
-	Connection connection;
-	public List<User> list;
 	
-	public  List<User>  getUserFromCache(){
-		if(list == null){
+	public List<User> list;
+
+	public List<User> getUserFromCache() {
+		if (list == null) {
 			list = getUserFromDB();
 		}
 		return list;
 	}
-	
-	public List<User>  getUserFromDB(){
-		
+
+	public List<User> getUserFromDB() {
+		Connection connection;
 		List<User> list = new ArrayList<User>();
 		connection = DbUtil.getConnection();
 		String sql = "select * from user";
 		try {
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
-			while(rs.next())
-			{
+			while (rs.next()) {
 				User user = new User();
 				user.setId(rs.getInt(1));
 				user.setFirstName(rs.getString(2));
@@ -60,25 +59,23 @@ public class UserCache {
 				user.setImage((InputStream) rs.getBlob(24));
 				list.add(user);
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return list;
 	}
 
-	
 	public static User getSelectedUser(String user_name) {
 		User user = null;
 		Connection connection = DbUtil.getConnection();
-		String sql = "select * from user where user_name = '"+user_name+"'";
+		String sql = "select * from user where user_name = '" + user_name + "'";
 		try {
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
-			while(rs.next())
-			{
+			while (rs.next()) {
 				user = new User();
 				user.setId(rs.getInt(1));
 				user.setFirstName(rs.getString(2));
@@ -103,7 +100,7 @@ public class UserCache {
 				user.setLastAccessTime(rs.getTimestamp(21));
 				user.setUserType(rs.getInt(22));
 				user.setCustomerType(rs.getInt(23));
-				//user.setImage((InputStream) rs.getBlob(24));
+				// user.setImage((InputStream) rs.getBlob(24));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

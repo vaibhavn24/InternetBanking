@@ -4,21 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<%-- <jsp:include page="usertype.jsp"></jsp:include> --%>
-<%-- <%@ include file="usertype.jsp" %> --%>
-
 </head>
 <script type="text/javascript" src="validation.js" ></script>
 <body>
-	<form action="login" method="post" onsubmit="return checklogin(this);">
+	<form action="login" method="post" onsubmit="return checklogin()">
 		<table>
 			<tr>
 				<td align='center' colspan="2"><font size="2"><strong>Username:</strong></font>
-					<input type="text" name="userName" id="TextBox" ></td><br>
+					<input type="text" name="userName" id="userName" />
+					<div id="userName_error"></div>
+				</td>
 			</tr>
 			<tr>
 				<td align='center' colspan="2"><font size="2"><strong>Password:</strong></font>
-					<input type="password" name="password" id="TextBox"></td>
+					<input type="password" name="password" id="password" />
+					<div id="password_error"></div>
+				</td>
 			</tr>
 
 			<tr>

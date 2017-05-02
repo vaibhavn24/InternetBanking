@@ -197,7 +197,7 @@
 	
 	<servlet>
 		<servlet-name>CustomerAadharServlet</servlet-name>
-		<servlet-class>com.controller.CustomerAadharServlet</servlet-class>
+		<servlet-class>com.controller.CustomerUpdateAadharServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CustomerAadharServlet</servlet-name>
