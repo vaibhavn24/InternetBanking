@@ -26,6 +26,12 @@
 		</div>
 		<div id="aside">
 			<h2>LOGIN</h2>
+		<%-- 	<table>
+			<%@ include file="fb.jsp" %>
+			<%@ include file="google.jsp" %> --%>
+			
+			
+			
 			<%@ include file="login.jsp" %>
 			
 			<p>
