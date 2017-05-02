@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.classes.Account;
 import com.helper.AccountHelper;
-import com.helper.AccountInterface;
 import com.helper.AddressHelper;
 import com.helper.CustomerTypeHelper;
 import com.helper.UserHelper;
@@ -32,9 +31,9 @@ public class RegisterServlet extends HttpServlet {
 		User user = UserHelper.populateUserByRequest(request);
 		user.insertUser();
 		userId = user.getCurrentUserId(user.getEmail());
-		/* Long AcNumber = Account.AcNum(userId);
+		 Long AcNumber = Account.AcNum();
 		 System.out.println("Your A/C Num is >> "+AcNumber);
-		 AccountHelper.insertAcNumber(AcNumber,userId);*/
+		 AccountHelper.insertAcNumber(AcNumber,userId);
 		 
 		CustomerType customerType = CustomerTypeHelper.populateCustomerType(
 				request);

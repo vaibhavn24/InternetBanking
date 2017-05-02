@@ -28,22 +28,14 @@
 
 <body>
 	<div id="content">
- 			
- 			<table class="width100">
-			<tr>
-				<td width='66%' align='center'><a
-					href="addbranch.jsp"> <u> Add new branch</u>
-				</a></td>
-				</tr>
-			</table>
 			 <form name="showbranchform">
-				<table class="table100" align="center">
+				<table class="table100">
 					<tr>
 						<th colspan="3">List of Branches</th>
 					</tr>
 					<tr>
-						<td width="12%">Sr No/Update</td>
-						<td width="86%">BranchName</td>
+						<td width="12%">Sr No</td>
+						<td width="86%">BranchName/Update</td>
 						<td width="2%">Delete</td>
 					</tr>
 					<%
@@ -54,12 +46,11 @@
 						for (Branch branch : list) {
 					%>
 					<tr>
-						<td><a href="updatebranch.jsp?ilRecId=<%=branch.getId()%>">
-								<u><%=++i%></u> &nbsp;
-						</a>&nbsp;</td>
-						<td><%=branch.getName()%> &nbsp;</td>
-						<td><input type="checkbox" name="id"
-							value=<%=branch.getId()%>></td>
+						<td>
+								<%=++i%> &nbsp;
+						&nbsp;</td>
+						<td><a href="updatebranch.jsp?ilRecId=<%=branch.getId()%>"><u><%=branch.getName()%></u> </a> &nbsp;</td>
+						<td><input type="checkbox" name="id" value=<%=branch.getId()%>></td>
 
 					</tr>
 					<%
@@ -71,15 +62,7 @@
 					<td><input type="submit" value="delete" onClick="deleted()"></td>
 					</tr>
 				</table>
-				<table class="width100">
-				<tr>
-					<td width='66%' align="center"><a
-						href="addbranch.jsp"> <u> Add New Branch </u>
-					</a></td>
-					</tr>
-				</table> 
 				</form>
-				
 		</div>
 </body>
 <%@ include file="footer.jsp" %>
