@@ -7,24 +7,21 @@
 <html>
 <head>
 <link href="css/common.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="styles.css">
+<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
-<link href="css/menu.css" rel="stylesheet" type="text/css">
+
 <link href="css/standard.css" rel="stylesheet" type="text/css">
 <link href="css/tables.css" rel="stylesheet" type="text/css">
 </head>
 <script type="text/javascript" src="validation.js"></script>
 <jsp:include page="superadmin_outside_header.jsp"></jsp:include>
 <body>
-
+<div id="contentview">
 	<h3 style="text-align: center;">
 		<b>Add New branch</b>
 	</h3>
 	<form action="addbranch" method="post" onsubmit="return addbranchform(this);">
 		<table class="table50" align='center'>
-				<tr>
-					<th colspan=2>Branch Information</th>
-				</tr> 
 			<tr>
 				<td width=30%>Branch Name</td>
 				<td width=70%><input type="text" name="name"
@@ -88,7 +85,7 @@
 			</tr>
 		</table>
 	</form>
-
+	</div>
 </body>
 <jsp:include page="footer.jsp"></jsp:include>
 </html>

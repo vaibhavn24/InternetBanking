@@ -18,9 +18,9 @@
 				<img src="images/home.jpg" width ="550px" height="400px" />
 			</div> -->
 			<div class="w3-content w3-section" style="max-width:500px">
-       <img class="mySlides" src="images/home.jpg" style="width:100%" height="350px">
-       <img class="mySlides" src="images/withdraw.jpg" style="width:100%" height="350px">
-       <img class="mySlides" src="images/images.jpg" style="width:100%" height="350px">
+       <img class="mySlides" src="images/home.jpg" style="width:100%" height="400px">
+       <img class="mySlides" src="images/withdraw.jpg" style="width:100%" height="400px">
+       <img class="mySlides" src="images/images.jpg" style="width:100%" height="400px">
           </div>
 			
 		</div>

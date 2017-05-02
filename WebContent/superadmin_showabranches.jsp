@@ -1,4 +1,3 @@
-<%@page import="com.model.User"%>
 <%@page import="com.model.Branch"%>
 <%@page import="com.helper.BranchesHelper"%>
 <%@page import="com.helper.BranchesHelperInterface"%>
@@ -28,7 +27,8 @@
 <%@ include file="superadmin_outside_header.jsp" %>
 
 <body>
-<input type="text" value="<%=user.getId()%>">
+	<div id="content">
+ 			
  			<table class="width100">
 			<tr>
 				<td width='66%' align='center'><a
@@ -68,9 +68,7 @@
 					<tr>
 					<td></td>
 					<td></td>
-					<td>
-					<input type="hidden" name="ilRecId" value="<%=user.getId()%>">
-					<input type="submit" value="delete" onClick="deleted()"></td>
+					<td><input type="submit" value="delete" onClick="deleted()"></td>
 					</tr>
 				</table>
 				<table class="width100">
@@ -82,7 +80,7 @@
 				</table> 
 				</form>
 				
-		
+		</div>
 </body>
 <%@ include file="footer.jsp" %>
 </html>
