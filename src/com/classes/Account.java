@@ -1,15 +1,15 @@
 package com.classes;
 
 import java.sql.Connection;
-
-import com.dbutility.DbUtil;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.dbutility.DbUtil;
+
 public class Account {
 	public static Connection connection;
+	
 	 Account()
 	 {
 		 connection =  DbUtil.getConnection();

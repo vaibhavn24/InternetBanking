@@ -9,25 +9,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.dbutility.DbUtil;
-import com.model.Question;
 import com.model.User;
 
 public class AdminHelper implements AdminInterface {
-	
+
 	private Connection connection;
 	User user = null;
-	public AdminHelper(){
+
+	public AdminHelper() {
 		connection = DbUtil.getConnection();
 	}
 
 	@Override
 	public List<User> getAllAdmins() {
-		
+
 		List<User> users = new ArrayList<User>();
 		try {
 			Statement statement = connection.createStatement();
 
-			ResultSet rs = statement.executeQuery("select * from user where usertype = 2");
+			ResultSet rs = statement
+					.executeQuery("select * from user where usertype = 2");
 			while (rs.next()) {
 				User user = new User();
 				user.setId(rs.getInt(1));
@@ -53,25 +54,24 @@ public class AdminHelper implements AdminInterface {
 				user.setLastAccessTime(rs.getTimestamp(21));
 				user.setUserType(rs.getInt(22));
 				user.setCustomerType(rs.getInt(23));
-				//user.setImage(rs.getBlob(24));
+				// user.setImage(rs.getBlob(24));
 				users.add(user);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return users;
-		
+
 	}
 
 	public User showSelectedAdmin1(int id) {
-		System.out.println("method selected Id>> "+id);
-		String sql = "select * from user where id = "+id+"";
+		System.out.println("method selected Id>> " + id);
+		String sql = "select * from user where id = " + id + "";
 		try {
-			
+
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
-			while(rs.next())
-			{
+			while (rs.next()) {
 				user = new User();
 				user.setId(rs.getInt(1));
 				user.setFirstName(rs.getString(2));
@@ -96,9 +96,9 @@ public class AdminHelper implements AdminInterface {
 				user.setLastAccessTime(rs.getTimestamp(21));
 				user.setUserType(rs.getInt(22));
 				user.setCustomerType(rs.getInt(23));
-				//user.setImage(rs.getBlob(24));
+				// user.setImage(rs.getBlob(24));
 			}
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -110,8 +110,9 @@ public class AdminHelper implements AdminInterface {
 	public void deleteAdmin(String id) {
 		// TODO Auto-generated method stub
 		try {
-			String sql = "DELETE FROM user WHERE id IN("+id+")";
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			String sql = "DELETE FROM user WHERE id IN(" + id + ")";
+			PreparedStatement preparedStatement = connection
+					.prepareStatement(sql);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -119,5 +120,4 @@ public class AdminHelper implements AdminInterface {
 		}
 	}
 
-	
 }

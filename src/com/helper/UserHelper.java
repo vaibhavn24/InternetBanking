@@ -511,59 +511,61 @@ public class UserHelper {
 
 	}
 
-	
-	public static User getUserByUserNameAndPassword(String userName, String password) {
-		
+	public static User getUserByUserNameAndPassword(String userName,
+			String password) {
+
 		Connection connection = null;
 		User user = null;
 		String encryptpassword = EncryptDecrypt.encryptData(password);
 		try {
 			connection = DbUtil.getConnection();
 			Statement stmt = connection.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from user where user_name = '"
-					+ userName + "'and password = '" + encryptpassword + "'");
-			
+			ResultSet rs = stmt
+					.executeQuery("select * from user where user_name = '"
+							+ userName + "'and password = '" + encryptpassword
+							+ "'");
+
 			if (rs.next()) {
 				user = User.populateUserByResultSet(rs);
 			}
-		
+
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;
 		}
-		
+
 		return user;
 	}
-	
+
 	public static User populateUserByResultSet(ResultSet rs) {
 		User user = new User();
 		try {
 			user.setId(rs.getInt(1));
-		user.setFirstName(rs.getString(2));
-		user.setLastName(rs.getString(3));
-		user.setGender(rs.getInt(4));
-		user.setMotherName(rs.getString(5));
-		user.setEmail(rs.getString(6));
-		user.setPrimaryPhoneNumber(rs.getString(7));
-		user.setSecondaryPhoneNumber(rs.getString(8));
-		String date = new SimpleDateFormat().format(rs.getDate(9));
-		user.setDateOfBirth(date);
-		user.setAadharcard(rs.getString(10));
-		user.setPancard(rs.getString(11));
-		
-		user.setQuestionId(rs.getInt(12));
-		String ans = EncryptDecrypt.decryptData(rs.getString(13));
-		user.setAnswer(ans);
-		user.setUserName(rs.getString(14));
-		user.setPassword(rs.getString(15));
-		user.setAccountStatus(rs.getInt(16));
-		user.setResidentialStatus(rs.getInt(17));
-		user.setAccountCreationDate(rs.getDate(18));
-		user.setPasswordModifiedDate(rs.getTimestamp(19));
-		user.setProfileModifiedDate(rs.getTimestamp(20));
-		user.setLastAccessTime(rs.getTimestamp(21));
-		user.setUserType(rs.getInt(22));
-		user.setCustomerType(rs.getInt(23));
+			user.setFirstName(rs.getString(2));
+			user.setLastName(rs.getString(3));
+			user.setGender(rs.getInt(4));
+			user.setMotherName(rs.getString(5));
+			user.setEmail(rs.getString(6));
+			user.setPrimaryPhoneNumber(rs.getString(7));
+			user.setSecondaryPhoneNumber(rs.getString(8));
+			String date = new SimpleDateFormat().format(rs.getDate(9));
+			user.setDateOfBirth(date);
+			user.setAadharcard(rs.getString(10));
+			user.setPancard(rs.getString(11));
+
+			user.setQuestionId(rs.getInt(12));
+			String ans = EncryptDecrypt.decryptData(rs.getString(13));
+			user.setAnswer(ans);
+			user.setUserName(rs.getString(14));
+			user.setPassword(rs.getString(15));
+			user.setAccountStatus(rs.getInt(16));
+			user.setResidentialStatus(rs.getInt(17));
+			user.setAccountCreationDate(rs.getDate(18));
+			user.setPasswordModifiedDate(rs.getTimestamp(19));
+			user.setProfileModifiedDate(rs.getTimestamp(20));
+			user.setLastAccessTime(rs.getTimestamp(21));
+			user.setUserType(rs.getInt(22));
+			user.setCustomerType(rs.getInt(23));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

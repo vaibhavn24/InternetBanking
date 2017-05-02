@@ -206,44 +206,46 @@ public class AddressHelper implements AddressInterface {
 		}
 		return permanantAddress;
 	}
-	
+
 	@Override
 	public void updateAddress() {
-		
-		System.out.println(" >> "+getLine1()+" "+getLine2()+" "+getCity()+" "+getPincode()+" "+getState()+" "+getCountry()+" "+getType()+"UserId>>"+getUserId());
+
+		System.out.println(" >> " + getLine1() + " " + getLine2() + " "
+				+ getCity() + " " + getPincode() + " " + getState() + " "
+				+ getCountry() + " " + getType() + "UserId>>" + getUserId());
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("update address set line1=?, line2=?, city=?, pincode=?, state=?, country=? where userId="+getUserId()+"");
-			preparedStatement.setString(1,getLine1());
-			preparedStatement.setString(2,getLine2());
+					.prepareStatement("update address set line1=?, line2=?, city=?, pincode=?, state=?, country=? where userId="
+							+ getUserId() + "");
+			preparedStatement.setString(1, getLine1());
+			preparedStatement.setString(2, getLine2());
 			preparedStatement.setString(3, getCity());
 			preparedStatement.setInt(4, getPincode());
-			preparedStatement.setString(5,getState());
+			preparedStatement.setString(5, getState());
 			preparedStatement.setString(6, getCountry());
-			//preparedStatement.setInt(7, getType());
-			//preparedStatement.setInt(8, getUserId());
+			// preparedStatement.setInt(7, getType());
+			// preparedStatement.setInt(8, getUserId());
 
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Override
 	public void deleteAdminAddress(String id) {
 		// TODO Auto-generated method stub
 		try {
-			String sql = "DELETE FROM address WHERE userId IN("+id+")";
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			String sql = "DELETE FROM address WHERE userId IN(" + id + ")";
+			PreparedStatement preparedStatement = connection
+					.prepareStatement(sql);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-
 
 }

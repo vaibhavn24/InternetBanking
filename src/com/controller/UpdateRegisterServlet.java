@@ -10,22 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.model.Address;
-import com.model.CustomerType;
 import com.model.User;
-import com.model.UserType;
 
 @MultipartConfig
 public class UpdateRegisterServlet extends HttpServlet {
-	User user = null;
-	UserType userType = null;
-	CustomerType customerType = null;
-	RequestDispatcher rd;
-	int userId;
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		User user = null;
+		RequestDispatcher rd;
+		int userId;
 		user = User.populateUserForUpadteByRequest(request);
 		int  id = Integer.parseInt(request.getParameter("updateEmpId"));
 		int userType = Integer.parseInt(request.getParameter("userType1"));

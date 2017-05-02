@@ -32,9 +32,9 @@ public class RegisterServlet extends HttpServlet {
 		User user = UserHelper.populateUserByRequest(request);
 		user.insertUser();
 		userId = user.getCurrentUserId(user.getEmail());
-		 Long AcNumber = Account.AcNum(userId);
+		/* Long AcNumber = Account.AcNum(userId);
 		 System.out.println("Your A/C Num is >> "+AcNumber);
-		 AccountHelper.insertAcNumber(AcNumber,userId);
+		 AccountHelper.insertAcNumber(AcNumber,userId);*/
 		 
 		CustomerType customerType = CustomerTypeHelper.populateCustomerType(
 				request);

@@ -16,18 +16,19 @@ import com.dbutility.DbUtil;
 
 public class ForgetPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Connection connection;
-	Statement statement;
+
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-			String eid = request.getParameter("eid");
-		EncryptDecrypt encryptDecrypt  = new EncryptDecrypt();
-		String did = encryptDecrypt.decryptData(eid);
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		Connection connection;
+		Statement statement;
+		String eid = request.getParameter("eid");
+		String did = EncryptDecrypt.decryptData(eid);
 		int id = Integer.parseInt(did);
 		String password1 = request.getParameter("confirmpassword");
-		String password = encryptDecrypt.encryptData(password1);
-		String sql ="update user set password ='"+password+"' where id='"+id+"'";
+		String password = EncryptDecrypt.encryptData(password1);
+		String sql = "update user set password ='" + password + "' where id='"
+				+ id + "'";
 		connection = DbUtil.getConnection();
 		try {
 			statement = connection.createStatement();

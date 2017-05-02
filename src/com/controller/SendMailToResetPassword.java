@@ -18,61 +18,61 @@ import com.classes.Mailer;
 import com.dbutility.DbUtil;
 import com.model.User;
 
-public class SendMailToResetPassword extends HttpServlet{
+public class SendMailToResetPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	Connection con;
-	Statement stmt;
-	ResultSet rs;
+
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd;
-		response.setContentType("text/html");  
-	    PrintWriter out = response.getWriter();  
-	    String to=request.getParameter("email");
-	    User user = new User();
-	    int userid = user.getCurrentUserId(to);
-	    String id = String.valueOf(userid);
+		Connection con;
+		Statement stmt;
+		ResultSet rs;
 
-	  
-	    String eid = EncryptDecrypt.encryptData(id);
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String to = request.getParameter("email");
+		User user = new User();
+		int userid = user.getCurrentUserId(to);
+		String id = String.valueOf(userid);
+		String eid = EncryptDecrypt.encryptData(id);
 
-	    con = DbUtil.getConnection();
-	    String sql ="select email from user where email like '"+to+"' "; 
-	    try {
+		con = DbUtil.getConnection();
+		String sql = "select email from user where email like '" + to + "' ";
+		try {
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs.next()){
-				  String subject= "change the password of the account"; 
-				   
-				    String msg=  "Hello; "
-				    		+ "to reset the password please click the below link.."
-				    		+"http://localhost:8081/InternetBanking/CallForgetPasswordServlet?eid="+eid;
-				          
-				    Mailer.send(to, subject, msg);
-				    String msg1 ="message has been sent successfully "+"\n"+"To change password please go to your gmai inbox and click the link given in the message"
-				    				+"\n "+"Thank you ";
-				    request.setAttribute("msg1", msg1);
-				    rd = request.getRequestDispatcher("gsuc.jsp");
-				    
-			}else{
-				String msg2 = "The email address you enter is Not register Please Enter the Valied Email address";
-				 request.setAttribute("msg2", msg2);
-				    rd = request.getRequestDispatcher("gsuc.jsp");
+			if (rs.next()) {
+				String subject = "change the password of the account";
 
-				
-				
+				String msg = "Hello; "
+						+ "to reset the password please click the below link.."
+						+ "http://localhost:8081/InternetBanking/CallForgetPasswordServlet?eid="
+						+ eid;
+
+				Mailer.send(to, subject, msg);
+				String msg1 = "message has been sent successfully "
+						+ "\n"
+						+ "To change password please go to your gmai inbox and click the link given in the message"
+						+ "\n " + "Thank you ";
+				request.setAttribute("msg1", msg1);
+				rd = request.getRequestDispatcher("gsuc.jsp");
+
+			} else {
+				String msg2 = "The email address you enter is Not register Please Enter the Valied Email address";
+				request.setAttribute("msg2", msg2);
+				rd = request.getRequestDispatcher("gsuc.jsp");
+
 			}
-			
-			rd.forward(request,response);
-			
+
+			rd.forward(request, response);
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
-			 out.close(); 
+		} finally {
+			out.close();
 		}
-	 
-	  
+
 	}
 }

@@ -13,7 +13,6 @@ public class UpdateUserPasswordAdminEmployeeRegisterServlet extends HttpServlet 
 	@Override
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// String eid = request.getParameter("eid");
 		RequestDispatcher rd = request
 				.getRequestDispatcher("updateuserpasswordadminemployee.jsp");
 		rd.forward(request, response);

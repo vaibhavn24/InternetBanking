@@ -16,7 +16,7 @@ public class EncryptDecrypt {
 
 		try {
 			dataEncrypted = encriptDES(ENCRYPTION_KEY, data);
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -24,7 +24,7 @@ public class EncryptDecrypt {
 		return dataEncrypted;
 	}
 
-	public static String decryptData(String data){
+	public static String decryptData(String data) {
 
 		String dataDecrypted = null;
 		try {
@@ -75,6 +75,5 @@ public class EncryptDecrypt {
 	public static String base64Encode(byte[] val) {
 		return DatatypeConverter.printBase64Binary(val);
 	}
-	
-	
+
 }

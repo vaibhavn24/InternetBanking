@@ -9,14 +9,11 @@ public class User extends UserHelper {
 		// TODO Auto-generated method stub
 		return super.insertUser();
 	}
+
 	@Override
 	public int updateUser(int id) {
 		// TODO Auto-generated method stub
 		return super.updateUser(id);
 	}
-	
-	
-	
-	
 
 }

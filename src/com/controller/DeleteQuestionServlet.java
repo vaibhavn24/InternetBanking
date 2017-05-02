@@ -12,26 +12,15 @@ import com.helper.SecurityQuestionHelper;
 import com.helper.SecurityQuestionInterface;
 
 public class DeleteQuestionServlet extends HttpServlet {
-	RequestDispatcher rd;
+	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd;
 		SecurityQuestionInterface securityQuestionHelper = new SecurityQuestionHelper();
 		String selectedId[] = request.getParameterValues("id");
-
-		/*
-		 * For Checking 
-		 * 
-		 * if (selectedId != null && selectedId.length != 0) {
-			System.out.println("You have selected: ");
-			for (int i = 0; i < selectedId.length; i++) {
-				System.out.println("selected Ids>> " + selectedId[i]);
-			}
-		}*/
-
-		String selectedMuliipleIds = "";
+		// String selectedMuliipleIds = "";
 		StringBuffer sb = new StringBuffer();
 
 		for (int i = 0; i < selectedId.length; i++) {
