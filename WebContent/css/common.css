@@ -153,14 +153,14 @@ width: 100%; */
 
 #footer {
 	clear: left;
-	background: #333;
+	background: #8080c0;
 	text-align: center;
 	padding: 20px;
 	/* height: 2%; */
 	color: #fff;
-	position: fixed;
+	position: relative;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 20px;
+	height: 10px;
 }

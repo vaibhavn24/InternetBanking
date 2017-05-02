@@ -30,9 +30,7 @@ public class LoginServlet extends HttpServlet {
 			rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}
-
 		int userType = user.getUserType();
-		System.out.println("In log in Servlet" + userType);
 		HttpSession session = request.getSession();
 		session.setAttribute("loggedInUser", user);
 

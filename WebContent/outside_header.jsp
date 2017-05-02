@@ -1,5 +1,8 @@
 <div id="header" align="center" style="background-color:white;">
-	<img src="images/logo2.png" width="30%" height="80px" />
+	<img src="images/logo2.png" width="50%" height="80px" />
+	<!-- <div align="right">
+	<img src="images/InternetBanking.jpg" width="70%" height="80px" />
+	</div> -->
 </div>
 <hr />
 <div id="navigation">
