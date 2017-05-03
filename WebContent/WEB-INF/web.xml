@@ -223,5 +223,24 @@
 	<url-pattern>/ProfileUpdatationWithOTP</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+	<servlet-name>checkEmail</servlet-name>
+	<servlet-class>com.classes.CheckEmail</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>checkEmail</servlet-name>
+	<url-pattern>/CheckEmail</url-pattern>
+	</servlet-mapping>
+
+		<servlet>
+	<servlet-name>checkUsername</servlet-name>
+	<servlet-class>com.classes.CheckUsername</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>checkUsername</servlet-name>
+	<url-pattern>/CheckUsername</url-pattern>
+	</servlet-mapping>	
 	
 </web-app>
