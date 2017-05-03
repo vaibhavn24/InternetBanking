@@ -76,7 +76,7 @@ function checkemail()
 {
 var xmlhttp;
 var k=document.getElementById("email").value;
-var urls="CheckEmail.jsp?email1="+k;
+var urls="CheckEmail?email1="+k;
 
 if (window.XMLHttpRequest)
   {
@@ -100,7 +100,7 @@ function checkname()
 {
 var xmlhttp;
 var k=document.getElementById("username").value;
-var urls="CheckUsername.jsp?uname="+k;
+var urls="CheckUsername?uname="+k;
 
 if (window.XMLHttpRequest)
   {
