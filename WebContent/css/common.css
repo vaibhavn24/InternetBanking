@@ -147,6 +147,14 @@ width: 100%; */
 	display: inline;
 }
 
+#aside1 {	
+	float: right;
+	width: 20%;
+	padding: 20px 0;
+	margin: 0 3% 0 0;
+	display: inline;
+}
+
 #aside h3 {
 	margin: 0;
 }
@@ -173,5 +181,5 @@ width: 100%; */
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 20px;
+	height: 10px;
 }

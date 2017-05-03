@@ -1,3 +1,8 @@
+
+<%@page import="java.util.Base64"%>
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.io.ByteArrayOutputStream"%>
+<%@page import="java.io.InputStream"%>
 <%@page import="com.model.Address"%>
 <%@page import="com.helper.AddressHelper"%>
 <%@page import="com.helper.AddressInterface"%>
@@ -69,10 +74,48 @@
 				AddressInterface address2 = new AddressHelper();
 				Address permanantaddress = address2.showSelectedPermanantAddress(user.getId());
      			%>	
-				<td><%=permanantaddress.getLine1()+", "+permanantaddress.getLine2()+"\n"+
+				 <td><%=permanantaddress.getLine1()+", "+permanantaddress.getLine2()+"\n"+
 					permanantaddress.getCity()+", "+permanantaddress.getState()+"\n"+
 					permanantaddress.getCountry()+"\n"+permanantaddress.getPincode()%></td>
+					<%--<td><%
+					InputStream is = user.getImage();
+					try (ByteArrayOutputStream os = new ByteArrayOutputStream();)
+				    {
+				        byte[] buffer = new byte[0xFFFF];
+
+				        for (int len; (len = is.read(buffer)) != -1;)
+				            os.write(buffer, 0, len);
+
+				       os.toByteArray();
+	
+;								    }
+					%></td> --%>
 			</tr>
+			<%-- <tr>
+			<td>
+			Profile picture
+			</td>
+			
+			<td>
+			
+			<%if(user.getImage()!= null){
+			
+			InputStream is = user.getImage();
+			
+			try (ByteArrayOutputStream os = new ByteArrayOutputStream();)
+		    {
+		        byte[] buffer = new byte[0xFFFF];
+
+		        for (int len; (len = is.read(buffer)) != -1;)
+		            os.write(buffer, 0, len);		    
+			String imgDataBase64=new String(Base64.getEncoder().encode( os.toByteArray()));
+			%>
+			
+			<img src="data:image/gif;base64,<%=imgDataBase64%>" alt="images Here" width="100px" height="100px"/>
+			<%} }%>
+			</td>
+			</tr>
+			 --%>
 			
 		</table>
 </body>

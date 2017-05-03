@@ -12,28 +12,30 @@
 			<tr>
 				<td align='center' colspan="2"><font size="2"><strong>Username:</strong></font>
 					<input type="text" name="userName" id="userName" />
-					<div id="userName_error"></div>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div align="center" style="font-size:12;color: red"  id="userName_error"></div>
 				</td>
 			</tr>
 			<tr>
 				<td align='center' colspan="2"><font size="2"><strong>Password:</strong></font>
 					<input type="password" name="password" id="password" />
-					<div id="password_error"></div>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<div style="font-size:12;color: red"  id="password_error"></div>
 				</td>
 			</tr>
 
 			<tr>
 				<td colspan="2" align='center'>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="submit"
+				 <input type="submit"
 					name="submit" value="Login"> <input type="Reset"
 					name="Reset" value="Reset">
 				</td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="getGmailForSendingEmail.jsp">forget
+				 <a href="getGmailForSendingEmail.jsp">forget
 						password</a>
 				</td>
 			</tr>

@@ -1,7 +1,9 @@
 package com.helper;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -26,7 +28,7 @@ import com.model.User;
 @MultipartConfig(maxFileSize = 16177216)
 public class UserHelper {
 
-	private Connection connection;
+	private static Connection connection;
 	private int id;
 	private String firstName;
 	private String lastName;
@@ -328,18 +330,21 @@ public class UserHelper {
 		return users;
 	}
 
-	public User getUserById(int userId) {
+	public static User getUserById(int userId) {
 		User user = new User();
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from users where userid=?");
+					.prepareStatement("select * from user where id=?");
 			preparedStatement.setInt(1, userId);
 			ResultSet rs = preparedStatement.executeQuery();
 
 			if (rs.next()) {
-				// user.setUserid(rs.getInt("userid"));
-				// user.setFirstName(rs.getString("firstname"));
-				user.setLastName(rs.getString("lastname"));
+				try {
+					user = UserHelper.populateUserByResultSet(rs);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -537,7 +542,7 @@ public class UserHelper {
 		return user;
 	}
 
-	public static User populateUserByResultSet(ResultSet rs) {
+	public static User populateUserByResultSet(ResultSet rs) throws IOException {
 		User user = new User();
 		try {
 			user.setId(rs.getInt(1));
@@ -548,7 +553,7 @@ public class UserHelper {
 			user.setEmail(rs.getString(6));
 			user.setPrimaryPhoneNumber(rs.getString(7));
 			user.setSecondaryPhoneNumber(rs.getString(8));
-			String date = new SimpleDateFormat().format(rs.getDate(9));
+			String date = new SimpleDateFormat("YYYY/MM/dd").format(rs.getDate(9));
 			user.setDateOfBirth(date);
 			user.setAadharcard(rs.getString(10));
 			user.setPancard(rs.getString(11));
@@ -566,6 +571,20 @@ public class UserHelper {
 			user.setLastAccessTime(rs.getTimestamp(21));
 			user.setUserType(rs.getInt(22));
 			user.setCustomerType(rs.getInt(23));
+			Blob image = rs.getBlob(24);
+			
+			if(image != null){
+		    byte[ ] imgData = null ; 
+		    imgData = image.getBytes(1,(int)image.length());
+			InputStream is = new ByteArrayInputStream(imgData);
+			/*String imgLen = rs.getString(24);
+			int len = imgLen.length();
+			byte [] rb = new byte[len];
+			InputStream readImg = rs.getBinaryStream(24);
+			int index=readImg.read(rb, 0, len);  
+			  System.out.println("index"+index);*/
+			user.setImage(is);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

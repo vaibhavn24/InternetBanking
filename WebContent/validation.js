@@ -5,12 +5,12 @@ function checklogin(form) {
 	
 	if(userName == '')
 	{
-	    document.getElementById('userName_error').innerHTML = "UserName Is Required";
+	    document.getElementById('userName_error').innerHTML = "*UserName Is Required";
 	    return false;
 	}
 	if(password == '')
 	{
-	    document.getElementById('password_error').innerHTML = "Password Is Required";
+	    document.getElementById('password_error').innerHTML = "*Password Is Required";
 	    return false;
 	}
 	return submit;
