@@ -16,9 +16,7 @@
 		<img src="images/logo2.png" width="30%" height="80px" />
 	</div>
 	<table class="width100">
-
 		<%
-	
         User user1 = (User)session.getAttribute("loggedInUser");
 		User user = UserHelper.getUserById(user1.getId());
 			if(user.getImage()!= null){
@@ -34,8 +32,6 @@
 			String imgDataBase64=new String(Base64.getEncoder().encode( os.toByteArray()));
 		    
 			%>
-			
-			
 		<tr>
 			<td>
 				<table class="toplinks">

@@ -27,8 +27,8 @@
 		<div id="aside">
 			<h2>LOGIN</h2>
 			
-			<%@ include file="fb.jsp" %>
-			<%@ include file="google.jsp" %>
+			<%-- <%@ include file="fb.jsp" %>
+			<%@ include file="google.jsp" %> --%>
 			
 			
 			

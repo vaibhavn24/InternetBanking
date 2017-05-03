@@ -577,12 +577,6 @@ public class UserHelper {
 		    byte[ ] imgData = null ; 
 		    imgData = image.getBytes(1,(int)image.length());
 			InputStream is = new ByteArrayInputStream(imgData);
-			/*String imgLen = rs.getString(24);
-			int len = imgLen.length();
-			byte [] rb = new byte[len];
-			InputStream readImg = rs.getBinaryStream(24);
-			int index=readImg.read(rb, 0, len);  
-			  System.out.println("index"+index);*/
 			user.setImage(is);
 			}
 		} catch (SQLException e) {

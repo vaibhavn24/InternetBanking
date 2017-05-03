@@ -129,7 +129,7 @@ xmlhttp.send();
 		<hr>
 	</h1>
 	<form action="register" method="post"
-		onsubmit="return validateForm()<!-- onsubmit="return registerform(this); -->">
+		onsubmit="return validateForm();">
 		<table class="tablecustomer50" align='left'>
 
 			<tr>
