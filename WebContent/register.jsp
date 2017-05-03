@@ -19,7 +19,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 <script type="text/javascript" src="validation.js"></script>
-<script>
+<!-- <script>
 $(document).ready(function(){
     $("#email").blur(function(){
     	var x = document.getElementById("email").value;
@@ -40,7 +40,88 @@ $(document).ready(function(){
         });
     });
 });
+</script> -->
+
+ <script type="text/javascript">
+          function validateForm()
+            {  
+            var x=document.forms["register"]["username"].value;
+            var y=document.getElementById('username').value;            
+            
+                if (y=="taken")
+                {
+                       alert("Name already exist in database");
+                    return false;
+                }else
+                {
+                        alert("Available");
+                }
+               
+                var a=document.forms["register"]["email"].value;
+                var b=document.getElementById('email').value;
+                
+                if (b == "taken")
+                    {
+                	
+                		alert("Email already exist in database");
+                		return false;
+                    }else
+                    	{
+                    	alert("Available");
+                    	}
+             }
+        </script>
+<script type="text/javascript">
+function checkemail()
+{
+var xmlhttp;
+var k=document.getElementById("email").value;
+var urls="CheckEmail.jsp?email1="+k;
+
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+        document.getElementById("email_status").innerHTML=xmlhttp.responseText;
+     }
+  }
+xmlhttp.open("GET",urls,true);
+xmlhttp.send();
+}
+function checkname()
+{
+var xmlhttp;
+var k=document.getElementById("username").value;
+var urls="CheckUsername.jsp?uname="+k;
+
+if (window.XMLHttpRequest)
+  {
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4)
+    {
+        document.getElementById("name_status").innerHTML=xmlhttp.responseText;
+     }
+  }
+xmlhttp.open("GET",urls,true);
+xmlhttp.send();
+}
 </script>
+
 <%@ include file="outside_header.jsp" %>
 <body>
 	<h1 style="text-align: center;">
@@ -48,7 +129,7 @@ $(document).ready(function(){
 		<hr>
 	</h1>
 	<form action="register" method="post"
-		onsubmit="return registerform(this);">
+		onsubmit="return validateForm()<!-- onsubmit="return registerform(this); -->">
 		<table class="tablecustomer50" align='left'>
 
 			<tr>
@@ -83,8 +164,9 @@ $(document).ready(function(){
 				</select> &nbsp;&nbsp;&nbsp;</td>
 			<tr>
 				<td>Email</td>
-				<td><input type="text" name="email" placeholder="Email" id="email"  size=25
-					maxlength=30 title="max. 30 characters"></td>
+				<td><input type="text" name="email" placeholder="Email" id="email" onblur="checkemail();"
+				 size=25 maxlength=30 title="max. 30 characters">
+					 <span id="email_status"></span></td>
 			</tr>
 			<tr>
 				<td>PrimaryPhoneNumber</td>
@@ -147,9 +229,10 @@ $(document).ready(function(){
 			</tr>
 			<tr>
 				<td width=30%>User Name</td>
-				<td width=70%><input type="text" name="userName" id="username"
+				<td width=70%><input type="text" name="username" id="username" onblur="checkname();"
 					placeholder="User Name" size=15 maxlength=30
-					title="max. 20 characters"> &nbsp;&nbsp;&nbsp;</td>
+					title="max. 20 characters"> &nbsp;&nbsp;&nbsp;
+					<span id="name_status"></span></td>
 			</tr>
 			<tr>
 				<td width=30%>Password</td>
