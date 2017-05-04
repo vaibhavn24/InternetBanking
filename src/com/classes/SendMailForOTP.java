@@ -5,7 +5,7 @@ public class SendMailForOTP {
 	public static String OTP;
 
 	public static void sendMailwithOPT(String email) {
-		OTP = GenerateOTP.OTP(4);
+		OTP = GenerateOTP.generateProfileOTP(4);
 		String subject = "OTP for Profile Updation";
 		String msg = "Hello; " + "Kindly Find OTP for your profile updation : "
 				+ OTP + " Here.. ";

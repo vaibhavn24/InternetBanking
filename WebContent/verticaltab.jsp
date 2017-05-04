@@ -1,3 +1,4 @@
+<%@page import="com.helper.AccountHelper"%>
 <%@page import="com.model.Address"%>
 <%@page import="com.helper.AddressHelper"%>
 <%@page import="com.helper.AddressInterface"%>
@@ -79,7 +80,7 @@ div.tab button {
 	text-align: left;
 	cursor: pointer;
 	transition: 0.3s;
-	font-size: 17px;
+	font-size: 15px;
 }
 
 /* Change background color of buttons on hover */
@@ -141,9 +142,13 @@ div.tab button.active {
 				<td>Balance</td>
 			</tr>
 			<tr>
-				<td>80552626261</td>
+			<%
+			AccountHelper  account = AccountHelper.getAcNumber(user.getId());
+			%>
+			
+				<td><%=account.getAccountNumber()%></td>
 				<td><%=user.getUserName()%></td>
-				<td>Rs- </td>
+				<td><%=account.getBalance() %> </td>
 			</tr>
 		</table>
 		
@@ -160,9 +165,7 @@ div.tab button.active {
 					<th colspan=3>Profile</th>
 				</tr> 
 			<tr>
-			<%-- <%=user.getId()%> --%>
 				<td  width="10%">Name</td>
-					<%-- <td><a href="updated_current_customerprofile.jsp?ilRecId=<%=user.getId()%>"> --%>
 					  <td><button id="myBtn"><%=user.getFirstName()+" "+user.getLastName()%></button>
 				        <u></u> &nbsp;</td>
 			</tr>
@@ -255,7 +258,7 @@ div.tab button.active {
     <p>Check your Mail for OTP to update your Profile </p>
     <form action="ProfileUpdatationWithOTP">
      OTP : <input type ="text" name="otp"/>
-     <input type="text" name ="id" value="<%=user.getId()%>">
+     <input type="hidden" name ="id" value="<%=user.getId()%>">
      <input type="submit" value="Submit">
      </form>
   </div>
@@ -327,7 +330,6 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
     modal.style.display = "block";
-    //var otp = GenerateOTP.OTP();
     var xmlhttp;
     var email = document.getElementById("email").value;
     var url = "SendMailwithOTP.jsp?email="+email;
@@ -341,20 +343,7 @@ btn.onclick = function() {
     }
     xmlhttp.open("GET",url,true);
     xmlhttp.send();
-     
-      
-    
-    //var x1 = document.getElementById("username").value;
-  /*   $.get("SendMailwithOTP?email="+email, function(data){
-    	if(data != ""){
-   		 alert(data);
-   		}
-    }); */
-    
-    //var sendmail =
 }
-
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
@@ -367,30 +356,5 @@ window.onclick = function(event) {
     }
 }
 </script>
-	<!-- <script>
-function opentab(evt , tabName)
-{
-
-var i , tabcontent , tablinks;
-tabcontent = document.getElementsByClassName("tabcontent");
-for (i=0 ; i<tabcontent.length;i++){
-	tabcontent[i].style.display = "none";
-}
-tablinks = document.getElementsByClassName("tablinks");
-for(i=0 ; i<tablinks.length;i++){
-	tablinks[i].className = tablinks[i].className.replace(" active", "");
-}
-document.getElementById()
-	}
-
-</script>
- -->
 </body>
 </html>
-
-
-
-
-
-
-
