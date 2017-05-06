@@ -33,7 +33,7 @@ public class DeleteCustomerServlet extends HttpServlet {
 		id = id.substring(0, id.length() - 1);
 		addressInterface.deleteAdminAddress(id);
 		custInterface.deleteCustomer(id);
-		rd = request.getRequestDispatcher("superadmin_showcustomer.jsp");
+		rd = request.getRequestDispatcher("/superadmin/superadmin_showcustomer.jsp");
 		rd.forward(request, response);
 	}
 }

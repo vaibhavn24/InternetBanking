@@ -19,7 +19,7 @@ public class AddBranchServlet extends HttpServlet {
 		Branch branch = Branch.populateBranch(request);
 		branch.insertBranches();
 		RequestDispatcher rd = request
-				.getRequestDispatcher("superadmin_showabranches.jsp");
+				.getRequestDispatcher("/superadmin/superadmin_showabranches.jsp");
 		rd.forward(request, response);
 	}
 

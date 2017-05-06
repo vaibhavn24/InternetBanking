@@ -30,7 +30,7 @@ public class DeleteBranchServlet extends HttpServlet {
 		String id = sb.toString();
 		id = id.substring(0, id.length() - 1);
 		bInterface.deleteBranch(id);
-		rd = request.getRequestDispatcher("superadmin_showabranches.jsp");
+		rd = request.getRequestDispatcher("/superadmin/superadmin_showabranches.jsp");
 		rd.forward(request, response);
 	}
 }

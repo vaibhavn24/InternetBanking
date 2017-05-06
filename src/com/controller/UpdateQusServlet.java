@@ -27,7 +27,7 @@ public class UpdateQusServlet extends HttpServlet {
 			System.out.println("Security Question Update Successifully>> ");
 		}
 
-		rd = request.getRequestDispatcher("super_adminshow_questions.jsp");
+		rd = request.getRequestDispatcher("/superadmin/super_adminshow_questions.jsp");
 		rd.forward(request, response);
 
 	}

@@ -21,13 +21,13 @@ public class ProfileUpdatationWithOTP extends HttpServlet {
 		String OriginalOTP = String.valueOf(OriginalOTP1);
 		if (SendMailForOTP.validate(UserOTP, OriginalOTP)) {
 			RequestDispatcher rd = request
-					.getRequestDispatcher("updated_current_customerprofile.jsp");
+					.getRequestDispatcher("/customer/updated_current_customerprofile.jsp");
 			rd.forward(request, response);
 		}
 
 		else {
 			RequestDispatcher rd = request
-					.getRequestDispatcher("customer_home.jsp");
+					.getRequestDispatcher("/customer/customer_home.jsp");
 			rd.forward(request, response);
 		}
 

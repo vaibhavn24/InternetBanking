@@ -36,22 +36,22 @@ public class LoginServlet extends HttpServlet {
 
 		switch (userType) {
 		case 1: {
-			rd = request.getRequestDispatcher("superadmin_home.jsp");
+			rd = request.getRequestDispatcher("/superadmin/superadmin_home.jsp");
 			rd.forward(request, response);
 			break;
 		}
 		case 2: {
-			rd = request.getRequestDispatcher("admin_home.jsp");
+			rd = request.getRequestDispatcher("/admin/admin_home.jsp");
 			rd.forward(request, response);
 			break;
 		}
 		case 3: {
-			rd = request.getRequestDispatcher("employee_home.jsp");
+			rd = request.getRequestDispatcher("/employee/employee_home.jsp");
 			rd.forward(request, response);
 			break;
 		}
 		case 4: {
-			rd = request.getRequestDispatcher("customer_home.jsp");
+			rd = request.getRequestDispatcher("/customer/customer_home.jsp");
 			rd.forward(request, response);
 			break;
 		}

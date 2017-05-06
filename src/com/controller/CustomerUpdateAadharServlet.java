@@ -34,7 +34,7 @@ public class CustomerUpdateAadharServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		RequestDispatcher rd = request
-				.getRequestDispatcher("customer_home.jsp");
+				.getRequestDispatcher("/customer/customer_home.jsp");
 		rd.forward(request, response);
 	}
 }

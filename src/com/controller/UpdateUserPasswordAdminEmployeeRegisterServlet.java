@@ -14,7 +14,7 @@ public class UpdateUserPasswordAdminEmployeeRegisterServlet extends HttpServlet 
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request
-				.getRequestDispatcher("updateuserpasswordadminemployee.jsp");
+				.getRequestDispatcher("/admin/updateuserpasswordadminemployee.jsp");
 		rd.forward(request, response);
 	}
 

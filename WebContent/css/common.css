@@ -18,8 +18,7 @@ html, body {
 #container {
 	/* height:100%;
 width: 100%; */
-	top :
-	min-height: 800px;
+	min-height: 810px;
 	min-width: 500px;
 	background: #fff;
 }
@@ -161,7 +160,7 @@ width: 100%; */
 
 #footer {
 	clear: left;
-	background: #333;
+	background: #8080ff;
 	text-align: center;
 	padding: 20px;
 	color: #fff;
@@ -169,11 +168,11 @@ width: 100%; */
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 20px;
+	height: 10px;
 }
 #footer1 {
 	clear: left;
-	background: #333;
+	background: #8080ff;
 	text-align: center;
 	padding: 20px;
 	color: #fff;

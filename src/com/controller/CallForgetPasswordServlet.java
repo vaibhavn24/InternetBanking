@@ -14,7 +14,7 @@ public class CallForgetPasswordServlet extends HttpServlet {
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd = request
-				.getRequestDispatcher("forgetpassword.jsp");
+				.getRequestDispatcher("/other/forgetpassword.jsp");
 		rd.forward(request, response);
 	}
 

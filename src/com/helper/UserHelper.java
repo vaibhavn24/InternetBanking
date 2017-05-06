@@ -374,7 +374,7 @@ public class UserHelper {
 		user.setQuestionId(questionId);
 		String ans = EncryptDecrypt.encryptData(request.getParameter("answer"));
 		user.setAnswer(ans);
-		user.setUserName(request.getParameter("userName"));
+		user.setUserName(request.getParameter("username"));
 		String confirmpassword = EncryptDecrypt.encryptData(request
 				.getParameter("confirmpassword"));
 		user.setPassword(confirmpassword);

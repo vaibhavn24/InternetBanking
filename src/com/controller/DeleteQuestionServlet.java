@@ -35,7 +35,7 @@ public class DeleteQuestionServlet extends HttpServlet {
 		if (i > 0) {
 			System.out.println("Delete record successifully>> ");
 		}
-		rd = request.getRequestDispatcher("super_adminshow_questions.jsp");
+		rd = request.getRequestDispatcher("/superadmin/super_adminshow_questions.jsp");
 		rd.forward(request, response);
 	}
 }

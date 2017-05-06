@@ -11,24 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.classes.EncryptDecrypt;
 import com.dbutility.DbUtil;
 import java.sql.*;
-public class CustomerForgetPwdServlet extends HttpServlet{
-	/**
-	 * 
-	 */
+
+public class CustomerForgetPwdServlet extends HttpServlet {
 	private static final long serialVersionUID = -7981688300668119590L;
-	Statement statement;
+
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		Statement statement;
 		String customerId = request.getParameter("customerId");
-		
-		
+
 		String origialpassword = request.getParameter("confirmpassword");
 
 		String encryptpassword = EncryptDecrypt.encryptData(origialpassword);
 
-		String sql ="update user set password ='"+encryptpassword+"' where id='"+customerId+"'";
+		String sql = "update user set password ='" + encryptpassword
+				+ "' where id='" + customerId + "'";
 		Connection connection = DbUtil.getConnection();
 		try {
 			statement = connection.createStatement();
@@ -36,9 +34,9 @@ public class CustomerForgetPwdServlet extends HttpServlet{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("customer_home.jsp");
+		RequestDispatcher rd = request
+				.getRequestDispatcher("/customer/customer_home.jsp");
 		rd.forward(request, response);
 	}
-
 
 }

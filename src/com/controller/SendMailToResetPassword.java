@@ -56,12 +56,12 @@ public class SendMailToResetPassword extends HttpServlet {
 						+ "To change password please go to your gmai inbox and click the link given in the message"
 						+ "\n " + "Thank you ";
 				request.setAttribute("msg1", msg1);
-				rd = request.getRequestDispatcher("gsuc.jsp");
+				rd = request.getRequestDispatcher("/other/gsuc.jsp");
 
 			} else {
 				String msg2 = "The email address you enter is Not register Please Enter the Valied Email address";
 				request.setAttribute("msg2", msg2);
-				rd = request.getRequestDispatcher("gsuc.jsp");
+				rd = request.getRequestDispatcher("/other/gsuc.jsp");
 
 			}
 

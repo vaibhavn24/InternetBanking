@@ -12,17 +12,19 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>toRegister</servlet-name>
-    <url-pattern>/register</url-pattern>
+    <url-pattern>/customer/register</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>SimpleCaptcha</servlet-name>
-    <servlet-class>nl.captcha.servlet.SimpleCaptchaServlet</servlet-class>
+ 
+   <servlet>
+    <servlet-name>BotDetect Captcha</servlet-name>
+    <servlet-class>com.captcha.botdetect.web.servlet.CaptchaServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>SimpleCaptcha</servlet-name>
-    <url-pattern>/simpleCaptcha.jpg</url-pattern>
+    <servlet-name>BotDetect Captcha</servlet-name>
+    <url-pattern>/botdetectcaptcha</url-pattern>
   </servlet-mapping>
-  <servlet>
+  
+    <servlet>
     <servlet-name>toLogin</servlet-name>
     <servlet-class>com.controller.LoginServlet</servlet-class>
   </servlet>
@@ -36,7 +38,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>validateEmailServlet</servlet-name>
-    <url-pattern>/AjaxEmailServlet/*</url-pattern>
+    <url-pattern>/other/AjaxEmailServlet/*</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>validateUserNameServlet</servlet-name>
@@ -44,7 +46,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>validateUserNameServlet</servlet-name>
-    <url-pattern>/AjaxUserNameServlet/*</url-pattern>
+    <url-pattern>/other/AjaxUserNameServlet/*</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>addSecurityQuestionServlet</servlet-name>
@@ -52,7 +54,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>addSecurityQuestionServlet</servlet-name>
-    <url-pattern>/addsecurityquestion</url-pattern>
+    <url-pattern>/question/addsecurityquestion</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>sendMailtoResetPassword</servlet-name>
@@ -60,7 +62,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>sendMailtoResetPassword</servlet-name>
-    <url-pattern>/sendmail</url-pattern>
+    <url-pattern>/other/sendmail</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ForgetPassword</servlet-name>
@@ -68,7 +70,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ForgetPassword</servlet-name>
-    <url-pattern>/forgetpassword</url-pattern>
+    <url-pattern>/other/forgetpassword</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>ForgetPasswordCall</servlet-name>
@@ -84,7 +86,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AddquestionServlet</servlet-name>
-    <url-pattern>/addquestion</url-pattern>
+    <url-pattern>/question/addquestion</url-pattern>
   </servlet-mapping>
   <servlet> 
     <servlet-name>DeleteQuestionServlet</servlet-name>
@@ -92,7 +94,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteQuestionServlet</servlet-name>
-    <url-pattern>/deletequestion</url-pattern>
+    <url-pattern>/question/deletequestion</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>UpdateQusServlet</servlet-name>
@@ -100,7 +102,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>UpdateQusServlet</servlet-name>
-    <url-pattern>/updatesecurityquestion</url-pattern>
+    <url-pattern>/question/updatesecurityquestion</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>addBranchServlet</servlet-name>
@@ -108,7 +110,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>addBranchServlet</servlet-name>
-    <url-pattern>/addbranch</url-pattern>
+    <url-pattern>/branch/addbranch</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>DeleteBranchServlet</servlet-name>
@@ -116,7 +118,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteBranchServlet</servlet-name>
-    <url-pattern>/deletebranch</url-pattern>
+    <url-pattern>/branch/deletebranch</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>UpdateBranchServlet</servlet-name>
@@ -124,7 +126,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>UpdateBranchServlet</servlet-name>
-    <url-pattern>/updatebranch</url-pattern>
+    <url-pattern>/branch/updatebranch</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>toAdminEmployeeRegister</servlet-name>
@@ -132,7 +134,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>toAdminEmployeeRegister</servlet-name>
-    <url-pattern>/adminregister</url-pattern>
+    <url-pattern>/admin/adminregister</url-pattern>
   </servlet-mapping> 
   <servlet>
 		<servlet-name>DeleteAdminServlet</servlet-name>
@@ -140,7 +142,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DeleteAdminServlet</servlet-name>
-		<url-pattern>/deleteadmin</url-pattern>
+		<url-pattern>/superadmin/deleteadmin</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -150,7 +152,7 @@
   
   <servlet-mapping>
   <servlet-name>UpdateRegisterServlet</servlet-name>
-  <url-pattern>/updateRegister</url-pattern>
+  <url-pattern>/superadmin/updateRegister</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -159,7 +161,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DeleteEmployeeServlet</servlet-name>
-		<url-pattern>/deleteemployee</url-pattern>
+		<url-pattern>/superadmin/deleteemployee</url-pattern>
 	</servlet-mapping>
   
   <servlet>
@@ -168,7 +170,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DeleteCustomerServlet</servlet-name>
-		<url-pattern>/deletecustomer</url-pattern>
+		<url-pattern>/superadmin/deletecustomer</url-pattern>
 	</servlet-mapping>
    <servlet>
     <servlet-name>updateUserPassword</servlet-name>
@@ -176,7 +178,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>updateUserPassword</servlet-name>
-    <url-pattern>/UpdateUserPasswordAdminEmployeeRegisterServlet/*</url-pattern>
+    <url-pattern>/admin/UpdateUserPasswordAdminEmployeeRegisterServlet/*</url-pattern>
   </servlet-mapping>
   <servlet>
    	<servlet-name>updateUserPasswordAdminEmployee</servlet-name>
@@ -184,7 +186,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>updateUserPasswordAdminEmployee</servlet-name>
-    <url-pattern>/updateuserpasswordofadminemp</url-pattern>
+    <url-pattern>/admin/updateuserpasswordofadminemp</url-pattern>
   </servlet-mapping>
   <servlet>
 		<servlet-name>CustomerForgetPwdServlet</servlet-name>
@@ -192,7 +194,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CustomerForgetPwdServlet</servlet-name>
-		<url-pattern>/customer_forgetpassword</url-pattern>
+		<url-pattern>/customer/customer_forgetpassword</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -201,7 +203,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>CustomerAadharServlet</servlet-name>
-		<url-pattern>/customerAadharNumber</url-pattern>
+		<url-pattern>/customer/customerAadharNumber</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -210,7 +212,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UpdateCurrentCustProfile</servlet-name>
-		<url-pattern>/updatecurrent_custprofile</url-pattern>
+		<url-pattern>/customer/updatecurrent_custprofile</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -220,7 +222,7 @@
 	
 	<servlet-mapping>
 	<servlet-name>MailOTP</servlet-name>
-	<url-pattern>/ProfileUpdatationWithOTP</url-pattern>
+	<url-pattern>/customer/ProfileUpdatationWithOTP</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -230,8 +232,19 @@
 	
 	<servlet-mapping>
 	<servlet-name>checkEmail</servlet-name>
-	<url-pattern>/CheckEmail</url-pattern>
+	<url-pattern>/customer/CheckEmail</url-pattern>
 	</servlet-mapping>
+	
+	<!-- <servlet-mapping>
+	<servlet-name>checkEmail</servlet-name>
+	<url-pattern>/admin/CheckEmail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+	<servlet-name>checkEmail</servlet-name>
+	<url-pattern>/superadmin/CheckEmail</url-pattern>
+	</servlet-mapping> -->
+	
 
 		<servlet>
 	<servlet-name>checkUsername</servlet-name>
@@ -240,7 +253,7 @@
 	
 	<servlet-mapping>
 	<servlet-name>checkUsername</servlet-name>
-	<url-pattern>/CheckUsername</url-pattern>
+	<url-pattern>/customer/CheckUsername</url-pattern>
 	</servlet-mapping>	
 	
 </web-app>

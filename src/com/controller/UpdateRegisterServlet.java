@@ -34,27 +34,27 @@ public class UpdateRegisterServlet extends HttpServlet {
 		
 		switch (userType) {
 		case 1: {
-			rd = request.getRequestDispatcher("superadmin_home.jsp");
+			rd = request.getRequestDispatcher("/superadmin/superadmin_home.jsp");
 			rd.forward(request, response);
 			break;
 		}
 		case 2: {
-			rd = request.getRequestDispatcher("superadmin_showadmin.jsp");
+			rd = request.getRequestDispatcher("/superadmin/superadmin_showadmin.jsp");
 			rd.forward(request, response);
 			break;
 		}
 		case 3: {
-			rd = request.getRequestDispatcher("superadmin_showemployee.jsp");
+			rd = request.getRequestDispatcher("/superadmin/superadmin_showemployee.jsp");
 			rd.forward(request, response);
 			break;
 		}
 		case 4: {
-			rd = request.getRequestDispatcher("superadmin_showcustomer.jsp");
+			rd = request.getRequestDispatcher("/superadmin/superadmin_showcustomer.jsp");
 			rd.forward(request, response);
 			break;
 		}
 		default: {
-			rd = request.getRequestDispatcher("superadmin_home.jsp");
+			rd = request.getRequestDispatcher("/superadmin/superadmin_home.jsp");
 			rd.forward(request, response);
 		}
 		

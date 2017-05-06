@@ -25,7 +25,7 @@ public class UpdateBranchServlet extends HttpServlet {
 		}
 
 		RequestDispatcher rd = request
-				.getRequestDispatcher("superadmin_showabranches.jsp");
+				.getRequestDispatcher("/superadmin/superadmin_showabranches.jsp");
 		rd.forward(request, response);
 
 	}

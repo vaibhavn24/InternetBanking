@@ -22,7 +22,7 @@ public class AddQuestionServlet extends HttpServlet {
 		SecurityQuestionInterface questionHelper = new SecurityQuestionHelper();
 		Question question = questionHelper.setSecurityQuestionValue(request);
 		question.insertSecurityQuestion(question);
-		rd = request.getRequestDispatcher("super_adminshow_questions.jsp");
+		rd = request.getRequestDispatcher("/superadmin/super_adminshow_questions.jsp");
 		rd.forward(request, response);
 
 	}
