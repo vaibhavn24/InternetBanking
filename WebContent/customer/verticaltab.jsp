@@ -14,9 +14,8 @@
 <body>
 	<%
 	HttpSession httpSession = request.getSession();
-		User user = (User)httpSession.getAttribute("loggedInUser");
-	
-%>
+	User user = (User)httpSession.getAttribute("loggedInUser");
+	%>
 	<div class="tab">
 		<button class="tablinks" onclick="openTab(event, 'AccountSummery')"
 			id="defaultOpen">Account Summery</button>

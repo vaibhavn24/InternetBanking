@@ -1,9 +1,6 @@
 package com.helper;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
+import java.sql.*;
 import com.dbutility.DbUtil;
 
 public class AccountHelper{
@@ -22,6 +19,8 @@ public class AccountHelper{
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+
 	public String getAccountNumber() {
 		return accountNumber;
 	}
@@ -77,5 +76,28 @@ public class AccountHelper{
 			e.printStackTrace();
 		} 
 		
+	}
+	
+public static AccountHelper getAcNumber(int uId){
+	
+		AccountHelper account = new AccountHelper();
+		String sql = "select * from accoutinfo where uid = "+uId+"";
+		try {
+			Connection connection = DbUtil.getConnection();
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			while(rs.next())
+			{
+				account.setAccountNumber(rs.getString(2));
+				account.setCIFNumber(rs.getString(3));
+				account.setBalance(rs.getDouble(4));
+				account.setUserId(rs.getInt(5));
+				account.setBranchId(rs.getInt(6));
+				account.setTransactionId(rs.getInt(7));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return account;
 	}
 }
