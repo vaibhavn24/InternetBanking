@@ -232,27 +232,30 @@
 	
 	<servlet-mapping>
 	<servlet-name>checkEmail</servlet-name>
+	<url-pattern>/superadmin/CheckEmail</url-pattern>
 	<url-pattern>/customer/CheckEmail</url-pattern>
 	</servlet-mapping>
 	
 	<!-- <servlet-mapping>
 	<servlet-name>checkEmail</servlet-name>
-	<url-pattern>/admin/CheckEmail</url-pattern>
-	</servlet-mapping>
-	
-	<servlet-mapping>
-	<servlet-name>checkEmail</servlet-name>
-	<url-pattern>/superadmin/CheckEmail</url-pattern>
+	<url-pattern>/customer/CheckEmail</url-pattern>
 	</servlet-mapping> -->
-	
 
-		<servlet>
+
+	<servlet>
 	<servlet-name>checkUsername</servlet-name>
 	<servlet-class>com.classes.CheckUsername</servlet-class>
 	</servlet>
+<!-- 	
+	<servlet-mapping>
+	<servlet-name>checkUsername</servlet-name>
+	<url-pattern>/superadmin/CheckUsername</url-pattern>
+	</servlet-mapping>	 -->
+	
 	
 	<servlet-mapping>
 	<servlet-name>checkUsername</servlet-name>
+		<url-pattern>/superadmin/CheckUsername</url-pattern>
 	<url-pattern>/customer/CheckUsername</url-pattern>
 	</servlet-mapping>	
 	

@@ -23,32 +23,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 <script type="text/javascript" src="validation.js"></script>
-<!-- <script>
-$(document).ready(function(){
-    $("#email").blur(function(){
-    	var x = document.getElementById("email").value;
-        $.get("AjaxEmailServlet?email="+x, function(data){
-        	if(data != ""){
-        		 alert(data);
-        	}
-        });
-    });
-}); 
-$(document).ready(function(){
-    $("#username").blur(function(){
-    	var x1 = document.getElementById("username").value;
-        $.get("AjaxUserNameServlet?username="+x1, function(data){
-        	if(data != ""){
-       		 alert(data);
-       	}
-        });
-    });
-});
-</script>
- -->
+
 <script type="text/javascript">
 	function validateForm() {
-		var x = document.forms["register"]["username"].value;
+		var x = document.forms["register"]["userName"].value;
 		var y = document.getElementById('username').value;
 
 		if (y == "taken") {
@@ -117,7 +95,7 @@ $(document).ready(function(){
 				<b>Register Here</b>
 			</h3>
 			<hr />
-			<form action="register" method="post"
+			<form action="register" method="post" name="register"
 				onsubmit="return registerform(this);">
 				<table class="table50" align='left'>
 
@@ -154,7 +132,8 @@ $(document).ready(function(){
 					<tr>
 						<td>Email</td>
 						<td><input type="text" name="email" placeholder="Email"
-							id="email" size=25 maxlength=30 title="max. 30 characters" /></td>
+							id="email" size=25 maxlength=30 title="max. 30 characters" onblur="checkemail();" />
+							<span id="email_status"></span></td>
 					</tr>
 					<tr>
 						<td>PrimaryPhoneNumber</td>
@@ -222,7 +201,8 @@ $(document).ready(function(){
 						<td width=30%>User Name</td>
 						<td width=70%><input type="text" name="userName"
 							id="username" placeholder="User Name" size=15 maxlength=30
-							title="max. 20 characters" /> &nbsp;&nbsp;&nbsp;</td>
+							title="max. 20 characters" onblur="checkname();" /> &nbsp;&nbsp;&nbsp;
+							<span id="name_status"></span></td>
 					</tr>
 					<tr>
 						<td width=30%>Password</td>
