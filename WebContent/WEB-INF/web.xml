@@ -259,4 +259,29 @@
 	<url-pattern>/customer/CheckUsername</url-pattern>
 	</servlet-mapping>	
 	
+	  <servlet> 
+    <servlet-name>DeleteServiceServlet</servlet-name>
+    <servlet-class>com.controller.DeleteServiceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteServiceServlet</servlet-name>
+    <url-pattern>/superadmin/deleteservice</url-pattern>
+  </servlet-mapping>
+	 <servlet>
+    <servlet-name>AddServiceServlet</servlet-name>
+    <servlet-class>com.controller.AddServiceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddServiceServlet</servlet-name>
+    <url-pattern>/service/addservice</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <servlet-name>UpdateServiceServlet</servlet-name>
+    <servlet-class>com.controller.UpdateServiceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateServiceServlet</servlet-name>
+    <url-pattern>/service/updateservice</url-pattern>
+  </servlet-mapping>
+	
 </web-app>

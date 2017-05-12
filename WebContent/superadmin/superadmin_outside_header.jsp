@@ -77,11 +77,12 @@
 				</div></li>
 
 
-			<li class="dropdown"><a href="#" class="dropbtn">Services</a>
-				<div class="dropdown-content">
-					<a href="/InternetBanking/superadmin/superadmin_showservices.jsp">show
-						services</a>
+			<li class="dropdown"><a href="/InternetBanking/superadmin/superadmin_services.jsp" class="dropbtn">Services</a>
+						<div class="dropdown-content">
+					<a href="/InternetBanking/service/addService.jsp">Add</a>
+					<a href="/InternetBanking/superadmin/superadmin_services.jsp">Show</a>
 				</div></li>
+				
 
 
 			<li class="dropdown"><a href="#" class="dropbtn">Security
