@@ -152,6 +152,16 @@
   
   <servlet-mapping>
   <servlet-name>UpdateRegisterServlet</servlet-name>
+  <url-pattern>/admin/updateRegister</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>UpdateRegisterServletsuperdmin</servlet-name>
+  <servlet-class>com.controller.UpdateRegisterServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>UpdateRegisterServletsuperdmin</servlet-name>
   <url-pattern>/superadmin/updateRegister</url-pattern>
   </servlet-mapping>
   
@@ -256,4 +266,32 @@
 	<url-pattern>/customer/CheckUsername</url-pattern>
 	</servlet-mapping>	
 	
+		<servlet>
+	<servlet-name>statementByDate1</servlet-name>
+	<servlet-class>com.controller.StatementByDateServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>statementByDate1</servlet-name>
+	<url-pattern>/statementByDate</url-pattern>
+	</servlet-mapping>	
+    <servlet>
+	<servlet-name>statementByMonth1</servlet-name>
+	<servlet-class>com.controller.StatementByMonthServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>statementByMonth1</servlet-name>
+	<url-pattern>/statementByMonth</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>quickTransfer</servlet-name>
+	<servlet-class>com.controller.QuickTransferServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	<servlet-name>quickTransfer</servlet-name>
+	<url-pattern>/customer/quick</url-pattern>
+	</servlet-mapping>	
 </web-app>

@@ -17,7 +17,7 @@
 	type="text/css">
 <link href="/InternetBanking/css/tables.css" rel="stylesheet"
 	type="text/css">
-
+<link rel="icon" type="image/png" href="/InternetBanking/images/bankicon.ico">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

@@ -4,6 +4,7 @@
 <html>
 <title>admin update page</title>
 <head>
+<link rel="icon" type="image/png" href="/InternetBanking/images/bankicon.ico">
 <link href="/InternetBanking/css/common.css" rel="stylesheet"
 	type="text/css" />
 <link rel="stylesheet" type="text/css"
@@ -49,6 +50,8 @@ $(document).ready(function(){
 <%@ include file="/superadmin/superadmin_outside_header.jsp"%>
 
 <body>
+<div id="container">
+		<div id="content-container">
 	<h4 style="text-align: center;">Update Admin Information</h4>
 	<hr />
 	<form action="updateRegister" method="post"
@@ -341,6 +344,8 @@ $(document).ready(function(){
 			</tr>
 		</table>
 	</form>
+	</div>
+	</div>
 </body>
 <%@ include file="/other/footer.jsp"%>
 </html>

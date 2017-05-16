@@ -17,6 +17,7 @@
 	type="text/css">
 <link href="/InternetBanking/css/tables.css" rel="stylesheet"
 	type="text/css">
+<link rel="icon" type="image/png" href="/InternetBanking/images/bankicon.ico">	
 </head>
 <script type="text/javascript" src="validation.js"></script>
 <%@ include file="/superadmin/superadmin_outside_header.jsp"%>

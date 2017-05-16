@@ -12,9 +12,8 @@
 		<img src="/InternetBanking/images/logo2.png" width="30%" height="50px" />
 	</div>
 	<hr />
-	<table class="width100">
-
-		<%
+	<%! String imgDataBase64;%>
+	<%
 			User user1 = (User) session.getAttribute("loggedInUser");
 			User user = UserHelper.getUserById(user1.getId());
 			if (user.getImage() != null) {
@@ -26,11 +25,16 @@
 
 					for (int len; (len = is.read(buffer)) != -1;)
 						os.write(buffer, 0, len);
-					String imgDataBase64 = new String(Base64.getEncoder()
+				 imgDataBase64 = new String(Base64.getEncoder()
 							.encode(os.toByteArray()));
+				}
+				}
+		
 		%>
 
-
+	
+	
+	<table class="width100">
 		<tr>
 			<td>
 				<table class="toplinks">
@@ -38,18 +42,23 @@
 						<td>
 							<table class="toplinks">
 								<tr>
-									<td align="right"><a
-										href="/InternetBanking/other/showprofile.jsp?ilRecId=<%=user.getId()%>"><img
+									<td align="right">
+									 <%if(imgDataBase64 != null) {%>
+									<a href="/InternetBanking/other/showprofile.jsp?ilRecId=<%=user.getId()%>"><img
 											src="data:image/gif;base64,<%=imgDataBase64%>"
 											alt="update profile" width="25" height="25" border="0"
-											align="middle"></a>&nbsp;&nbsp; <a href="#" target="_blank">Whats
+											align="middle"></a>
+										<%}else{%>
+										<a href="/InternetBanking/other/showprofile.jsp?ilRecId=<%=user.getId()%>"><img
+											src="/InternetBanking/images/profile.png"
+											alt="update profile" width="25" height="25" border="0"
+											align="middle"></a>
+										<% }%> 
+										&nbsp;&nbsp; <a href="#" target="_blank">Whats
 											New!!</a> &nbsp;&nbsp;<font color=white>|</font>&nbsp;&nbsp; <a
 										href="/InternetBanking/index.jsp"> Sign out </a></td>
 								</tr>
-								<%
-									}
-									}
-								%>
+								
 							</table>
 						</td>
 					</tr>

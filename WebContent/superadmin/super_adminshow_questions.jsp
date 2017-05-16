@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<link rel="icon" type="image/png" href="/InternetBanking/images/bankicon.ico">
 <link href="/InternetBanking/css/common.css" rel="stylesheet"
 	type="text/css" />
 <link rel="stylesheet" type="text/css"

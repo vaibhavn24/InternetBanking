@@ -1,3 +1,7 @@
+<!DOCTYPE title PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<title>welcome to our bank</title>
+<link rel="icon" type="image/png" href="images/bankicon.ico">
 <link href="css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="css/KItables.css" rel="stylesheet" type="text/css">
@@ -18,6 +22,7 @@
 				<!-- <div style="position: relative; left: 15% ;"  >
 				<img src="images/home.jpg" width ="550px" height="400px" />
 			</div> -->
+			<fieldset style="width: 500px;">
 				<div class="w3-content w3-section" style="max-width: 500px">
 					<img class="mySlides" src="images/home.jpg" style="width: 100%"
 						height="400px"> <img class="mySlides"
@@ -25,7 +30,7 @@
 					<img class="mySlides" src="images/images.jpg" style="width: 100%"
 						height="400px">
 				</div>
-
+			</fieldset>
 			</div>
 			<div id="aside">
 				<h2>LOGIN</h2>
@@ -67,3 +72,4 @@
 		setTimeout(carousel, 5000); // Change image every 2 seconds
 	}
 </script>
+</html>

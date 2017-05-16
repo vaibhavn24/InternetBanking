@@ -12,24 +12,29 @@
 		<img src="/InternetBanking/images/logo2.png" width="30%" height="50px" />
 	</div>
 	<hr />
+	<%! String imgDataBase64;%>
+	<%
+			User user1 = (User) session.getAttribute("loggedInUser");
+			User user = UserHelper.getUserById(user1.getId());
+			if (user.getImage() != null) {
+
+				InputStream is = user.getImage();
+
+				try (ByteArrayOutputStream os = new ByteArrayOutputStream();) {
+					byte[] buffer = new byte[0xFFFF];
+
+					for (int len; (len = is.read(buffer)) != -1;)
+						os.write(buffer, 0, len);
+					imgDataBase64 = new String(Base64.getEncoder()
+							.encode(os.toByteArray()));
+				}
+				}
+		
+		%>
+
+	
+	
 	<table class="width100">
-
-		<%
-        User user1 = (User)session.getAttribute("loggedInUser");
-		User user = UserHelper.getUserById(user1.getId());
-			if(user.getImage()!= null){
-			
-			InputStream is = user.getImage();
-			
-			try (ByteArrayOutputStream os = new ByteArrayOutputStream();)
-		    {
-		        byte[] buffer = new byte[0xFFFF];
-
-		        for (int len; (len = is.read(buffer)) != -1;)
-		            os.write(buffer, 0, len);		    
-			String imgDataBase64=new String(Base64.getEncoder().encode( os.toByteArray()));
-		    
-			%>
 		<tr>
 			<td>
 				<table class="toplinks">
@@ -37,15 +42,23 @@
 						<td>
 							<table class="toplinks">
 								<tr>
-									<td align="right"><a
-										href="/InternetBanking/other/showprofile.jsp?ilRecId=<%=user.getId()%>"><img
+									<td align="right">
+									 <%if(imgDataBase64 != null) {%>
+									<a href="/InternetBanking/other/showprofile.jsp?ilRecId=<%=user.getId()%>"><img
 											src="data:image/gif;base64,<%=imgDataBase64%>"
 											alt="update profile" width="25" height="25" border="0"
-											align="middle"></a>&nbsp;&nbsp; <a href="#" target="_blank">Whats
+											align="middle"></a>
+										<%}else{%>
+										<a href="/InternetBanking/other/showprofile.jsp?ilRecId=<%=user.getId()%>"><img
+											src="/InternetBanking/images/profile.png"
+											alt="update profile" width="25" height="25" border="0"
+											align="middle"></a>
+										<% }%> 
+										&nbsp;&nbsp; <a href="#" target="_blank">Whats
 											New!!</a> &nbsp;&nbsp;<font color=white>|</font>&nbsp;&nbsp; <a
 										href="/InternetBanking/index.jsp"> Sign out </a></td>
 								</tr>
-								<%}} %>
+								
 							</table>
 						</td>
 					</tr>
@@ -56,36 +69,35 @@
 	<div id="navigation">
 		<ul>
 
-			<li><a href="<!-- /InternetBanking/superadmin/superadmin_home.jsp -->">Home</a></li>
+			<li><a href="/InternetBanking/customer/customer_home.jsp">My Account</a></li>
 
-			<li class="dropdown"><a href="#" class="dropbtn">User</a>
-				<div class="dropdown-content">
+			<li class="dropdown"><a href="/InternetBanking/customer/paymenttransfer.jsp" class="dropbtn">Payment/Transfer</a>
+				<%-- <div class="dropdown-content">
 					<a href="<!-- /InternetBanking/superadmin/superadmin_showadmin.jsp -->">Admin</a>
 					<a href="<!-- /InternetBanking/superadmin/superadmin_showemployee.jsp-->" >Employee</a>
 					<a href="<!-- /InternetBanking/superadmin/superadmin_showcustomer.jsp -->">Customer</a>
 					<!--  <a href="#">Link 3</a> -->
-				</div></li>
+				</div> --%></li>
 
-			<li class="dropdown"><a href="#" class="dropbtn"> Branches</a>
-				<div class="dropdown-content">
+			<li class="dropdown"><a href="#" class="dropbtn">Bill Payments</a>
+				<%-- <div class="dropdown-content">
 					<a href="<!-- /InternetBanking/branch/addbranch.jsp -->">Add</a> <a
 						href="<!-- /InternetBanking/superadmin/superadmin_showabranches.jsp -->">show</a>
-				</div></li>
+				</div> --%></li>
 
 
-			<li class="dropdown"><a href="#" class="dropbtn">Services</a>
-				<div class="dropdown-content">
+			<li class="dropdown"><a href="#" class="dropbtn">Our Services</a>
+				<%-- <div class="dropdown-content">
 					<a href="<!-- /InternetBanking/superadmin/superadmin_showservices.jsp -->">show
 						services</a>
-				</div></li>
+				</div> --%></li>
 
 
-			<li class="dropdown"><a href="#" class="dropbtn">Security
-					question</a>
-				<div class="dropdown-content">
+			<li class="dropdown"><a href="#" class="dropbtn">Profile</a>
+				<%-- <div class="dropdown-content">
 					<a href="<!-- /InternetBanking/question/addSecurityQuestion.jsp -->">Add</a>
 					<a href="<!-- /InternetBanking/superadmin/super_adminshow_questions.jsp -->">Show</a>
-				</div></li>
+				</div> --%></li>
 		</ul>
 	</div>
 </body>

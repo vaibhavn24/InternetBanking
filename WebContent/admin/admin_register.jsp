@@ -5,6 +5,7 @@
 <html>
 <head>
 <title>Register page</title>
+<link rel="icon" type="image/png" href="/InternetBanking/images/bankicon.ico">
 <link href="/InternetBanking/css/common.css" rel="stylesheet"
 	type="text/css" />
 <link rel="stylesheet" type="text/css"

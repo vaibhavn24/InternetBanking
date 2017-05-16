@@ -118,30 +118,26 @@ div.tab button.active {
 <body>
 
 	<div class="tab" style="color: blue;">
-		<button class="tablinks" onclick="openTab(event, 'AccountSummery')"
-			id="defaultOpen">Account Summery</button>
-		<button class="tablinks" onclick="openTab(event, 'AccountStatement')">Account
-			Statement</button>
-		<button class="tablinks" onclick="openTab(event, 'Profile')">
-			My Profile</button>
+		<button class="tablinks" onclick="openTab(event, 'quickTransfer')"
+			id="defaultOpen">Quick Transfer</button>
+		<button class="tablinks" onclick="openTab(event, 'AccountStatement')">Our Bank Transfer</button>
+		<!-- <button class="tablinks" onclick="openTab(event, 'Profile')">
+			My Profile</button> -->
 		<button class="tablinks"
-			onclick="openTab(event, 'ChangeLoginPassword')">Change Login
-			Password</button>
+			onclick="openTab(event, 'ChangeLoginPassword')">IntraBank Transfer</button>
 		<button class="tablinks"
-			onclick="openTab(event, 'LinkyourAadhar')">Link
-			your Aadhar Card Number</button>
-		<button class="tablinks"
+			onclick="openTab(event, 'LinkyourAadhar')">Add Beneficiary</button>
+		<!-- <button class="tablinks"
 			onclick="openTab(event, 'LinkyourLPGCustomerID')">Link your
-			LPG CustomerID</button>
+			LPG CustomerID</button> -->
 
 	</div>
-
-	<div id="AccountSummery" class="tabcontent">
-	<br />
+	"
+	<div id="quickTransfer" class="tabcontent">
+	<h3>Transfer Money here</h3>
+	<form action="quickpay" id="quick">
 		<table class="table100" align='center'>
-				<tr>
-					<th colspan=4>AccountSummery</th>
-				</tr> 
+
 			<tr>
 				<td>Account Number</td>
 				<td>Branch</td>
@@ -159,6 +155,46 @@ div.tab button.active {
 				<td></td>
 			</tr>
 		</table>
+		<br />
+		
+		<table class="tablecustomer100" align='center'>
+		<tr>
+		<td>Selected Account Number</td>
+		<td><%=account.getAccountNumber()%></td>
+		</tr>
+		<tr>
+		<td>beneficiary Name</td>
+		<td><input type="text" name="name"
+							placeholder="Beneficiary Name" size=50 maxlength=50
+							title="max. 50 characters" /></td>
+		</tr>
+		<tr>
+		<td>beneficiary Account Number</td>
+		<td><input type="text" name="accountNumber"
+							placeholder="Account Number" size=10 maxlength=10
+							title="max. 10 numbers" /></td>
+		</tr>
+		<tr>
+		<td>Payment Option
+		</td>
+		<td><input type="radio" name="paymentoption" value="male" />Within
+			<input type="radio" name="paymentoption" value="female" />InterBank
+		</td>
+		</tr>
+		<tr>
+		<td>Amount</td>
+		<td><input type="text" name="amount"
+							placeholder="Amount" size=10 maxlength=10
+							title="max. 10 numbers" /></td>
+		</tr>
+		</table>
+		<table class="tableadmin100" align='center'> 
+		<tr>
+		<td align="center"><input type="button" id="pay" value="pay" onclick="payamount()"/></td>
+		</tr>
+		</table>
+		
+		</form>
 		
 	</div>
 
@@ -197,14 +233,14 @@ div.tab button.active {
 				<tr>
 				<td>By Date :</td>
 				<td>
-				<form action="statementByDate" id="bydate">
+				<form action="statementByDate">
 				Start Date: <input type="date" name="startDate"
 							placeholder="yyyy/mm/dd" />&nbsp;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					End Date: <input type="date" name="endDate"
 							placeholder="yyyy/mm/dd" />	
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="button" id="btn_bydate" value="view" onclick="by_date()"/>
+							<input type="submit" value="view">	
 					</form>		
 							</td>
 				</tr>
@@ -214,14 +250,14 @@ div.tab button.active {
 		<tr>
 		<td>By Month :</td>
 		<td>
-		<form action="statementByMonth" id="bymonth">
+		<form action="statementByMonth">
 		Year:<input type="text" name="year"
 							placeholder="Year" />	
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				
 			Month:<input type="text" name="month"
 							placeholder="Month" />
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;					
-			<input type="button" id="btn_bymonth" value="view" onclick="by_month()"/>
+			<input type="submit" value="view">		
 		</form>									
 		</td>
 		</tr>
@@ -442,14 +478,9 @@ window.onclick = function(event) {
     }
 }
 
-function by_date(){
+function payamount(){
 	//window.alert("hiiii");
-	 document.getElementById("bydate").submit(); 
-}
-
-function by_month(){
-	//window.alert("hiiii");
-	 document.getElementById("bymonth").submit(); 
+	 document.getElementById("quick").submit(); 
 }
 </script>
 	<!-- <script>

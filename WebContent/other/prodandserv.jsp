@@ -10,7 +10,7 @@
 	type="text/css">
 <link href="/InternetBanking/css/tables.css" rel="stylesheet"
 	type="text/css">
-
+<link rel="icon" type="image/png" href="/InternetBanking/images/bankicon.ico">
 <%@ include file="/other/outside_header.jsp"%>
 <div id="container">
 	<div id="content-container">
