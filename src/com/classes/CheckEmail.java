@@ -16,13 +16,18 @@ import com.dbutility.DbUtil;
 
 public class CheckEmail extends HttpServlet{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 718488979799253330L;
+
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	
 		 String sn=request.getParameter("email1");
          Connection con = DbUtil.getConnection();
-         Statement st;
+         Statement st = null;
 		try {
 			st = con.createStatement();
 			PrintWriter out = response.getWriter();
@@ -44,12 +49,19 @@ public class CheckEmail extends HttpServlet{
 	             
 	        }
 	         
-	         rs.close();
-	         st.close();
-	         con.close();
+	         
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
+		} finally {
+			
+	         try {
+				st.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	         
 		}
 
 	}
